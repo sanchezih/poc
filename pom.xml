@@ -12,5 +12,6 @@
 		<module>java-hibernate-xml-mysql-example</module>
 		<module>java-restful-simple</module>
 		<module>java-restful-jersey-cloudant</module>
+		<module>java-restful-jersey-mongodb</module>
 	</modules>
 </project>
