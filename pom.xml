@@ -4,9 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sanchezih</groupId>
 	<artifactId>poc</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
+	
 	<modules>
-		<module>test</module>
+		<module>jsp-mysql-crud</module>
 	</modules>
 </project>
