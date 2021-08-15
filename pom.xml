@@ -9,5 +9,6 @@
 	
 	<modules>
 		<module>jsp-mysql-crud</module>
+		<module>java-hibernate-xml-mysql-example</module>
 	</modules>
 </project>
