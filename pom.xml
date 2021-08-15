@@ -11,5 +11,6 @@
 		<module>jsp-mysql-crud</module>
 		<module>java-hibernate-xml-mysql-example</module>
 		<module>java-restful-simple</module>
+		<module>java-restful-jersey-cloudant</module>
 	</modules>
 </project>
