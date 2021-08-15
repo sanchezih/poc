@@ -10,5 +10,6 @@
 	<modules>
 		<module>jsp-mysql-crud</module>
 		<module>java-hibernate-xml-mysql-example</module>
+		<module>java-restful-simple</module>
 	</modules>
 </project>
