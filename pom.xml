@@ -6,12 +6,15 @@
 	<artifactId>poc</artifactId>
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
-	
+
 	<modules>
 		<module>jsp-mysql-crud</module>
 		<module>java-hibernate-xml-mysql-example</module>
 		<module>java-restful-simple</module>
 		<module>java-restful-jersey-cloudant</module>
 		<module>java-restful-jersey-mongodb</module>
+		<module>JAXRSJsonCRUDExample</module>
+		<module>exceptions-example</module>
 	</modules>
+
 </project>
