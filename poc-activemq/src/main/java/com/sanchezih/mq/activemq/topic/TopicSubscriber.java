@@ -1,4 +1,4 @@
-package org.study.mq.activeMQ;
+package com.sanchezih.mq.activemq.topic;
 
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
