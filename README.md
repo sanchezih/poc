@@ -1,4 +1,4 @@
-# poc
+# Repositorio de pruebas de concepto
 ![GitHub last commit](https://img.shields.io/github/last-commit/sanchezih/poc)
 ![GitHub repo size](https://img.shields.io/github/repo-size/sanchezih/poc)
 
