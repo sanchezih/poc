@@ -13,12 +13,12 @@ public class TopicPublisher {
 	// Password predeterminada
 	public static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;
 
-	// Dirección de conexión predeterminada
+	// Direccion de conexion predeterminada
 	public static final String BROKER_URL = ActiveMQConnection.DEFAULT_BROKER_URL;
 
 	public static void main(String[] args) {
 
-		// Crea una fábrica de conexiones
+		// Crea una fabrica de conexiones
 		ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(USERNAME, PASSWORD, BROKER_URL);
 
 		try {
