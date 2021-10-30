@@ -27,8 +27,7 @@ public class ProductController {
 	}
 
 	/**
-	 * Cambiamos a ResponseEntity. Ahora podemos devolver el status code de la
-	 * respuesta
+	 * Utilizando ResponseEntity podemos devolver el status code de la respuesta
 	 * 
 	 * @return
 	 */
