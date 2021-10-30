@@ -26,22 +26,10 @@ public class ProductController {
 		return "Hola mundo!";
 	}
 
-	/**
-	 * Cambiamos a ResponseEntity. Ahora podemos devolver el status code de la
-	 * respuesta
-	 * 
-	 * @return
-	 */
 	@GetMapping(path = "/product/{id}")
 	public ResponseEntity<Product> get(@PathVariable Long id) {
 		return new ResponseEntity<>(productService.get(id), HttpStatus.ACCEPTED);
 	}
-
-	/* En esta impl utilizo @RequestParam */
-//	@RequestMapping(value = "/product", method = RequestMethod.GET)
-//	public ResponseEntity<Product> get(@RequestParam(name = "id") Long id) {
-//		return new ResponseEntity<>(productService.get(id), HttpStatus.ACCEPTED);
-//	}
 
 	@PostMapping(path = "/product")
 	public ResponseEntity<Product> create(@RequestBody ProductDto dto) {
