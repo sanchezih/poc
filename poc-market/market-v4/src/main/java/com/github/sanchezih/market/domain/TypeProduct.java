@@ -24,7 +24,7 @@ public class TypeProduct {
 
 	@OneToMany(mappedBy = "typeProduct", fetch = FetchType.EAGER)
 	private Set<Product> products;
-	
+
 	public TypeProduct() {
 
 	}

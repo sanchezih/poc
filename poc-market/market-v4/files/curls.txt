@@ -1,0 +1,24 @@
+curl --location --request POST 'http://localhost:8080/product' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Manzana",
+    "cost": 12.5,
+    "typeId": 1
+}'
+
+curl --location --request POST 'http://localhost:8080/product' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Banana",
+    "cost": 8.3,
+    "typeId": 1
+}'
+
+curl --location --request PUT 'http://localhost:8080/product' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": 2,
+    "name": "Banana",
+    "cost": 10.0,
+    "typeId": 1
+}'

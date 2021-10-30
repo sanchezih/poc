@@ -1,8 +1,8 @@
 curl --location --request POST 'http://localhost:8080/product' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "name": "manzana",
-    "cost": 19.3,
+    "name": "Manzana",
+    "cost": 12.5,
     "typeId": 1
 }'
 

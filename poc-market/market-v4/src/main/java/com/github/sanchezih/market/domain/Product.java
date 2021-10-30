@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Product extends AuditModel{
+public class Product extends AuditModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
