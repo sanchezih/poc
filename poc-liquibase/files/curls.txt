@@ -1,0 +1,6 @@
+curl --location --request POST 'localhost:8080/estudiante' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "nombre": "Pedro",
+    "direccion": "Calle 1234"
+}'
