@@ -13,9 +13,9 @@ import com.github.sanchezih.junit.EcuacionPrimerGrado;
 import com.github.sanchezih.junit.Parseador;
 
 /**
- * Ahora, si sólamente quisiéramos probar de forma unitaria el método
+ * Ahora, si solamente quisiéramos probar de forma unitaria el metodo
  * obtenerResultado de la clase EcuacionPrimerGrado debemos hacer uso de los
- * “dobles”. Pensad en implementar estos dobles vosotros mismos sin hacer uso de
+ * "dobles". Pensad en implementar estos dobles vosotros mismos sin hacer uso de
  * ningún framework. Seguramente ya estáis pensando en crear una interfaz para
  * la clase Parseador y crear métodos que permitan hacer la sustitución por un
  * objeto fake...vamos, que se complica un poco.

@@ -8,9 +8,9 @@ import org.junit.Test;
 import com.github.sanchezih.junit.EcuacionPrimerGrado;
 
 /**
- * A continuación, se muestra un ejemplo de un test de integración donde se
- * verifica la interacción del componente EcuacionPrimerGrado y el Parseador.
- * Los test comprueban que el resultado final de la ecuación es correcto.
+ * A continuacion, se muestra un ejemplo de un test de integracion donde se
+ * verifica la interaccion del componente EcuacionPrimerGrado y el Parseador.
+ * Los test comprueban que el resultado final de la ecuacion es correcto.
  * 
  * @author ihsanch
  *
