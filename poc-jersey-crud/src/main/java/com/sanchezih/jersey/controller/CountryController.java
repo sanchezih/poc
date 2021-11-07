@@ -44,7 +44,6 @@ public class CountryController {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Country updateCountry(Country country) {
 		return countryService.updateCountry(country);
-
 	}
 
 	@DELETE
