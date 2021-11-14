@@ -1,0 +1,9 @@
+cd holamundo-springboot
+mvn clean
+mvn install
+mvn spring-boot:run
+docker build -t holamundo-ihs:v1 .
+docker run -p 8080:8080 holamundo-ihs:v1
+docker run -d -p 8080:8080 holamundo-ihs:v1		Lo corre en background
+
+curl -X GET http://localhost:8080
