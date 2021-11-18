@@ -9,7 +9,6 @@ import java.util.Random;
 public class MessageSender {
 
 	public enum UserAction {
-
 		CONFIGURACION("IR A OPCIONES DE CONFIGURACION"), PORTADA("VER PORTADA"), LOGIN("ACCEDER A LA APLICACION"),
 		SUGERENCIA("ENVIAR SUGERENCIA");
 
@@ -25,37 +24,33 @@ public class MessageSender {
 	}
 
 	private static final Random RANDOM = new Random(System.currentTimeMillis());
-
 	private static final String URL = "tcp://localhost:61616";
-
 	private static final String USER = ActiveMQConnection.DEFAULT_USER;
-
 	private static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;
-
 	private static final String DESTINATION_QUEUE = "APLICATION1.QUEUE";
-
 	private static final boolean TRANSACTED_SESSION = true;
-
 	private static final int MESSAGES_TO_SEND = 20;
 
 	public void sendMessages() throws JMSException {
-
+		
 		final ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(USER, PASSWORD, URL);
+		
 		Connection connection = connectionFactory.createConnection();
+	
+		// Llamar a start() para permitir el envio de mensajes
 		connection.start();
-
+		
+		// Creamos una sesion sin transaccionalidad y con envio de acuse automatico
 		final Session session = connection.createSession(TRANSACTED_SESSION, Session.AUTO_ACKNOWLEDGE);
 		final Destination destination = session.createQueue(DESTINATION_QUEUE);
-
+		
+		// Creamos el productor a partir de una cola
 		final MessageProducer producer = session.createProducer(destination);
 		producer.setDeliveryMode(DeliveryMode.PERSISTENT);
-
 		sendMessages(session, producer);
 		session.commit();
-
 		session.close();
 		connection.close();
-
 		System.out.println("Mensajes enviados correctamente");
 	}
 

@@ -10,19 +10,12 @@ import java.util.Map;
 public class UserActionConsumer {
 
 	private static final String URL = "tcp://localhost:61616";
-
 	private static final String USER = ActiveMQConnection.DEFAULT_USER;
-
 	private static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;
-
 	private static final String DESTINATION_QUEUE = "APLICATION1.QUEUE";
-
 	private static final boolean TRANSACTED_SESSION = false;
-
 	private static final int TIMEOUT = 1000;
-
 	private final Map<String, Integer> consumedMessageTypes;
-
 	private int totalConsumedMessages = 0;
 
 	public UserActionConsumer() {
@@ -34,14 +27,19 @@ public class UserActionConsumer {
 		final ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(USER, PASSWORD, URL);
 		final Connection connection = connectionFactory.createConnection();
 
+		// Llamar a start() para permitir la recepción de mensajes
 		connection.start();
 
+		// Creamos una sesion sin transaccionalidad y con envio de acuse automatico
 		final Session session = connection.createSession(TRANSACTED_SESSION, Session.AUTO_ACKNOWLEDGE);
 		final Destination destination = session.createQueue(DESTINATION_QUEUE);
+
+		// Creamos el consumidor a partir de una cola
 		final MessageConsumer consumer = session.createConsumer(destination);
 
 		processAllMessagesInQueue(consumer);
 
+		// Cerramos los recursos
 		consumer.close();
 		session.close();
 		connection.close();
