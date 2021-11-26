@@ -1,4 +1,4 @@
-package com.init.products.rest;
+package com.init.products.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,7 +19,7 @@ import com.init.products.entity.Product;
 
 @RestController
 @RequestMapping("products")
-public class ProductsREST {
+public class ProductController {
 
 	@Autowired
 	private ProductsDAO productDAO;
@@ -65,11 +65,5 @@ public class ProductsREST {
 			return ResponseEntity.notFound().build();
 		}
 	}
-
-//	@GetMapping // localhost:8080
-	// @RequestMapping(value = "hello", method = RequestMethod.GET)
-	// public String hello() {
-	// return "Hello world";
-	// }
 
 }
