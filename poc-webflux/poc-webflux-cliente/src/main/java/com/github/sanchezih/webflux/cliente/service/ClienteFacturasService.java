@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.github.sanchezih.webflux.cliente.service;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.example.demo.dominio.Factura;
+import com.github.sanchezih.webflux.cliente.model.Factura;
 
 import reactor.core.publisher.Flux;
 
@@ -21,7 +21,6 @@ public class ClienteFacturasService {
 	}
 
 	public Flux<Factura> buscarTodasFlux() {
-
 		WebClient cliente = WebClient.create("http://localhost:8081/facturas");
 		Flux<Factura> facturas = cliente.get().retrieve().bodyToFlux(Factura.class);
 		Flux<Factura> facturas2 = cliente.get().retrieve().bodyToFlux(Factura.class);
@@ -29,7 +28,5 @@ public class ClienteFacturasService {
 		Flux<Factura> todas = Flux.merge(facturas, facturas2, facturas3);
 		System.out.println(todas);
 		return todas;
-
 	}
-
 }

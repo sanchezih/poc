@@ -1,9 +1,20 @@
-package com.github.sanchezih.webflux.dominio;
+package com.github.sanchezih.webflux.cliente.model;
 
 public class Factura {
 	private int numero;
 	private String concepto;
 	private double importe;
+
+	public Factura() {
+		super();
+	}
+
+	public Factura(int numero, String concepto, double importe) {
+		super();
+		this.numero = numero;
+		this.concepto = concepto;
+		this.importe = importe;
+	}
 
 	public int getNumero() {
 		return numero;
@@ -28,16 +39,4 @@ public class Factura {
 	public void setImporte(double importe) {
 		this.importe = importe;
 	}
-
-	public Factura(int numero, String concepto, double importe) {
-		super();
-		this.numero = numero;
-		this.concepto = concepto;
-		this.importe = importe;
-	}
-
-	public Factura() {
-		super();
-	}
-
 }
