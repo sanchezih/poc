@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th> id </th>
+            <th> concepto </th>
+               <th> importe </th>
+        </tr>
+    </thead>
+    <tbody>
+   
+        <tr th:each="factura : ${lista}">
+            <td><span th:text="${factura.numero}"> </span></td>
+            <td><span th:text="${factura.concepto}"></span></td>
+              <td><span th:text="${factura.importe}"></span></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
