@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.sanchezih</groupId>
-	<artifactId>poc-webflux</artifactId>
+	<artifactId>poc-webflux-servidor</artifactId>
 	<version>1.0.0</version>
-	<name>poc-webflux</name>
+	<name>poc-webflux-servidor</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
