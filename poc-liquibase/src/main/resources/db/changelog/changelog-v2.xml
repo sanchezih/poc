@@ -5,21 +5,10 @@
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-	<changeSet id="1" author="Luciana Perez">
-		<createTable tableName="estudiante">
-			<column name="id" type="int" autoIncrement="true">
-				<constraints primaryKey="true" />
-			</column>
-			<column name="nombre" type="varchar(255)">
-				<constraints nullable="false" />
-			</column>
-		</createTable>
-	</changeSet>
-	
-	<changeSet id="2" author="Martin Rodriguez">
+	<changeSet id="1" author="Ignacio Sanchez">
 		<addColumn schemaName="liquibase" tableName="estudiante">
-			<column name="direccion" type="varchar(255)" />
+			<column name="edad" type="int" />
 		</addColumn>
 	</changeSet>
-	
+
 </databaseChangeLog>
