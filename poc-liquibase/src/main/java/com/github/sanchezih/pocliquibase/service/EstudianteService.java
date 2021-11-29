@@ -4,17 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.sanchezih.pocliquibase.domain.Estudiante;
-import com.github.sanchezih.pocliquibase.domain.repository.REstudiante;
+import com.github.sanchezih.pocliquibase.domain.repository.EstudianteRepository;
 
 @Service
 public class EstudianteService implements IEstudiante {
 
 	@Autowired
-	REstudiante rEstudiante;
+	EstudianteRepository estudianteRepository;
 
 	@Override
 	public Estudiante create(Estudiante estudiante) {
-		rEstudiante.save(estudiante);
+		estudianteRepository.save(estudiante);
 		return estudiante;
 	}
 

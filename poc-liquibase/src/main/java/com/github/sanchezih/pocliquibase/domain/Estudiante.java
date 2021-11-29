@@ -19,7 +19,6 @@ public class Estudiante {
 	@Column(name = "nombre")
 	private String nombre;
 
-
 	@Column(name = "direccion")
 	private String direccion;
 
@@ -27,7 +26,7 @@ public class Estudiante {
 		// For persistence
 	}
 
-	public Estudiante(String nombre , String direccion) {
+	public Estudiante(String nombre, String direccion) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 	}
@@ -56,5 +55,4 @@ public class Estudiante {
 		this.direccion = direccion;
 	}
 
-	
 }
