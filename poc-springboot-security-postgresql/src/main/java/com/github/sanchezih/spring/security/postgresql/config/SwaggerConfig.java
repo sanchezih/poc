@@ -34,10 +34,15 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo getApiInfo() {
-		return new ApiInfo("POC JWT API", "POC JWT API Description", "1.0.0", "http://pocjwt.com.ar",
-				new Contact("POC", "https://pocjwt.com", "info@poc.com"), "LICENSE", "LICENSE URL",
-				Collections.emptyList()
-
+		return new ApiInfo(
+				"POC JWT API", // titulo
+				"Foo Bar API Description", // descripcion
+				"1.0", // version
+				"http://foobar.com/terms", // termsOfServiceUrl
+				new Contact("Foobar", "https://foobar.com", "foo@bar.com"), // contact
+				"LICENSE", // license
+				"LICENSE URL", // licenseUrl
+				Collections.emptyList() // vendorExtensions
 		);
 	}
 
