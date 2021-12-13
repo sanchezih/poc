@@ -19,8 +19,7 @@ public class FacturaClienteController {
 
 	@RequestMapping("/lista")
 	public String lista(Model modelo) {
-		System.out.println("entra...");
-
+		
 		List<Factura> lista = new ArrayList<Factura>();
 		lista.addAll(servicio.buscarTodas());
 		lista.addAll(servicio.buscarTodas());
