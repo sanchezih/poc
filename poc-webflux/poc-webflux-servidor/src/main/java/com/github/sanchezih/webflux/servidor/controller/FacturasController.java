@@ -17,7 +17,7 @@ public class FacturasController {
 	@GetMapping("/facturas")
 	public List<Factura> buscarTodas() {
 		List<Factura> lista = new ArrayList<Factura>();
-		lista.add(new Factura(1, "ordenador", 200));
+		lista.add(new Factura(1, "computadora", 200));
 		lista.add(new Factura(2, "tablet", 300));
 		try {
 			Thread.sleep(3000);
@@ -30,7 +30,7 @@ public class FacturasController {
 
 	@GetMapping("/facturasflux")
 	public Flux<Factura> buscarTodasFlux() {
-		Flux<Factura> lista = Flux.just(new Factura(1, "ordenador", 200), new Factura(2, "tablet", 300))
+		Flux<Factura> lista = Flux.just(new Factura(1, "computadora", 200), new Factura(2, "tablet", 300))
 				.delaySequence(Duration.ofSeconds(3));
 		return lista;
 	}
