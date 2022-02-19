@@ -17,16 +17,16 @@ public class TestController {
 	}
 
 	@GetMapping("/user")
-	@PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public String userAccess() {
-		return "Mostrando contenido para 'USER', 'MODERATOR' y 'ADMIN'...";
+		return "Mostrando contenido para 'USER' o 'ADMIN'...";
 	}
 
-	@GetMapping("/mod")
-	@PreAuthorize("hasRole('MODERATOR')")
-	public String moderatorAccess() {
-		return "Mostrando contenido para 'MODERATOR'...";
-	}
+//	@GetMapping("/mod")
+//	@PreAuthorize("hasRole('MODERATOR')")
+//	public String moderatorAccess() {
+//		return "Mostrando contenido para 'MODERATOR'...";
+//	}
 
 	@GetMapping("/admin")
 	@PreAuthorize("hasRole('ADMIN')")
