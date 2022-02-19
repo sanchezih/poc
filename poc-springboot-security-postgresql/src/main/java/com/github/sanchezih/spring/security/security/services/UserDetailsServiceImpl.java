@@ -1,4 +1,4 @@
-package com.github.sanchezih.spring.security.postgresql.security.services;
+package com.github.sanchezih.spring.security.security.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -7,8 +7,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.github.sanchezih.spring.security.postgresql.models.User;
-import com.github.sanchezih.spring.security.postgresql.repository.UserRepository;
+import com.github.sanchezih.spring.security.models.User;
+import com.github.sanchezih.spring.security.repository.UserRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

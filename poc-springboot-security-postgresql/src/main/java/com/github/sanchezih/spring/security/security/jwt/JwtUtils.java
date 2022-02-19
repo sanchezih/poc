@@ -1,4 +1,4 @@
-package com.github.sanchezih.spring.security.postgresql.security.jwt;
+package com.github.sanchezih.spring.security.security.jwt;
 
 import java.util.Date;
 
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import com.github.sanchezih.spring.security.postgresql.security.services.UserDetailsImpl;
+import com.github.sanchezih.spring.security.security.services.UserDetailsImpl;
 
 import io.jsonwebtoken.*;
 

@@ -1,4 +1,4 @@
-package com.github.sanchezih.spring.security.postgresql.config;
+package com.github.sanchezih.spring.security.config;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -24,18 +24,17 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
 
 	public static final String AUTHORIZATION_HEADER = "Authorization";
+	public static final String BASE_PACKAGE = "com.github.sanchezih.spring.security.controller";
 
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).apiInfo(getApiInfo())
 				.securityContexts(Arrays.asList(securityContext())).securitySchemes(Arrays.asList(apiKey())).select()
-				.apis(RequestHandlerSelectors.basePackage("com.github.sanchezih.spring.security.postgresql.controller"))
-				.paths(PathSelectors.any()).build();
+				.apis(RequestHandlerSelectors.basePackage(BASE_PACKAGE)).paths(PathSelectors.any()).build();
 	}
 
 	private ApiInfo getApiInfo() {
-		return new ApiInfo(
-				"POC JWT API", // titulo
+		return new ApiInfo("POC JWT API", // titulo
 				"Foo Bar API Description", // descripcion
 				"1.0", // version
 				"http://foobar.com/terms", // termsOfServiceUrl

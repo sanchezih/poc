@@ -1,4 +1,4 @@
-package com.github.sanchezih.spring.security.postgresql.models;
+package com.github.sanchezih.spring.security.models;
 
 import java.util.HashSet;
 import java.util.Set;

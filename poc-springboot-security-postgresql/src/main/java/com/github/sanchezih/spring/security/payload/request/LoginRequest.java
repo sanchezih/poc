@@ -1,4 +1,4 @@
-package com.github.sanchezih.spring.security.postgresql.payload.request;
+package com.github.sanchezih.spring.security.payload.request;
 
 import javax.validation.constraints.NotBlank;
 

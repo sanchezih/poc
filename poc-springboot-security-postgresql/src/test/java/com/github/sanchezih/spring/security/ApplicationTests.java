@@ -1,4 +1,4 @@
-package com.github.sanchezih.spring.security.postgresql;
+package com.github.sanchezih.spring.security;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

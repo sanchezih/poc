@@ -1,4 +1,4 @@
-package com.github.sanchezih.spring.security.postgresql.security.services;
+package com.github.sanchezih.spring.security.security.services;
 
 import java.util.Collection;
 import java.util.List;
@@ -10,7 +10,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.github.sanchezih.spring.security.postgresql.models.User;
+import com.github.sanchezih.spring.security.models.User;
 
 public class UserDetailsImpl implements UserDetails {
 

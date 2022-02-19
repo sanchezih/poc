@@ -1,4 +1,4 @@
-package com.github.sanchezih.spring.security.postgresql;
+package com.github.sanchezih.spring.security;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

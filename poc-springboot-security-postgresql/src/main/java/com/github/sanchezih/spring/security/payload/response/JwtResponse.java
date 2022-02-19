@@ -1,4 +1,4 @@
-package com.github.sanchezih.spring.security.postgresql.payload.response;
+package com.github.sanchezih.spring.security.payload.response;
 
 import java.util.List;
 

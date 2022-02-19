@@ -1,4 +1,4 @@
-package com.github.sanchezih.spring.security.postgresql.security.jwt;
+package com.github.sanchezih.spring.security.security.jwt;
 
 import java.io.IOException;
 import java.util.HashMap;

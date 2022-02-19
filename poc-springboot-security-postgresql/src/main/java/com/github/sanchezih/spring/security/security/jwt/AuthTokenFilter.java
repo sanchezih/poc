@@ -1,4 +1,4 @@
-package com.github.sanchezih.spring.security.postgresql.security.jwt;
+package com.github.sanchezih.spring.security.security.jwt;
 
 import java.io.IOException;
 
@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.github.sanchezih.spring.security.postgresql.security.services.UserDetailsServiceImpl;
+import com.github.sanchezih.spring.security.security.services.UserDetailsServiceImpl;
 
 public class AuthTokenFilter extends OncePerRequestFilter {
 

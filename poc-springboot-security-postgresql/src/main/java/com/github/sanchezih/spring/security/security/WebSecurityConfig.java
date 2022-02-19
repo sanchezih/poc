@@ -1,4 +1,4 @@
-package com.github.sanchezih.spring.security.postgresql.security;
+package com.github.sanchezih.spring.security.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -14,9 +14,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.github.sanchezih.spring.security.postgresql.security.jwt.AuthEntryPointJwt;
-import com.github.sanchezih.spring.security.postgresql.security.jwt.AuthTokenFilter;
-import com.github.sanchezih.spring.security.postgresql.security.services.UserDetailsServiceImpl;
+import com.github.sanchezih.spring.security.security.jwt.AuthEntryPointJwt;
+import com.github.sanchezih.spring.security.security.jwt.AuthTokenFilter;
+import com.github.sanchezih.spring.security.security.services.UserDetailsServiceImpl;
 
 @Configuration
 @EnableWebSecurity
@@ -27,13 +27,19 @@ import com.github.sanchezih.spring.security.postgresql.security.services.UserDet
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	private static final String[] AUTH_WHITELIST = {
+
 			// -- Swagger UI v2
 			"/v2/api-docs", "/swagger-resources", "/swagger-resources/**", "/configuration/ui",
 			"/configuration/security", "/swagger-ui.html", "/webjars/**",
+
 			// -- Swagger UI v3 (OpenAPI)
 			"/v3/api-docs/**", "/swagger-ui/**",
-			// other public endpoints of your API may be appended to this array
-			"/actuator/health" };
+
+			// -- Other public endpoints of your API may be appended to this array
+			"/actuator/health"
+
+			//
+	};
 
 	@Autowired
 	UserDetailsServiceImpl userDetailsService;

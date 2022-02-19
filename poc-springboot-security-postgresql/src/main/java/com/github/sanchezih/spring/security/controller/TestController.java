@@ -1,4 +1,4 @@
-package com.github.sanchezih.spring.security.postgresql.controller;
+package com.github.sanchezih.spring.security.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
