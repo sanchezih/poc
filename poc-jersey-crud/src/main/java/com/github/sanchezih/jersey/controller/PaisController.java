@@ -52,7 +52,6 @@ public class PaisController {
 	@Produces(MediaType.APPLICATION_JSON)
 	public void deleteCountry(@PathParam("id") int id) {
 		paisService.deletePais(id);
-
 	}
 
 }

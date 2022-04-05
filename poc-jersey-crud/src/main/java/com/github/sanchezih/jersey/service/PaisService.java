@@ -25,14 +25,14 @@ public class PaisService {
 
 			// Inicializacion
 			Pais argentina = new Pais(1, "Argentina", 45000000);
-			Pais uruguay = new Pais(4, "Uruguay", 3000000);
-			Pais chile = new Pais(3, "Chile", 19000000);
 			Pais brasil = new Pais(2, "Brasil", 212000000);
+			Pais chile = new Pais(3, "Chile", 19000000);
+			Pais uruguay = new Pais(4, "Uruguay", 3000000);
 
 			paisIdMap.put(1, argentina);
-			paisIdMap.put(4, uruguay);
-			paisIdMap.put(3, chile);
 			paisIdMap.put(2, brasil);
+			paisIdMap.put(3, chile);
+			paisIdMap.put(4, uruguay);
 		}
 	}
 
