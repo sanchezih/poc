@@ -1,18 +1,25 @@
-package com.sanchezih.mq.activemq.queue;
+package com.sanchezih.mq.activemq.queue.consumidor;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.jms.Connection;
+import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageConsumer;
+import javax.jms.Session;
+import javax.jms.TextMessage;
 
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
-
-import javax.jms.*;
-import java.util.HashMap;
-import java.util.Map;
 
 public class UserActionConsumer {
 
 	private static final String URL = "tcp://localhost:61616";
 	private static final String USER = ActiveMQConnection.DEFAULT_USER;
 	private static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;
-	private static final String DESTINATION_QUEUE = "APLICATION1.QUEUE";
+	private static final String DESTINATION_QUEUE = "APLICATIONPRUEBA.QUEUE";
 	private static final boolean TRANSACTED_SESSION = false;
 	private static final int TIMEOUT = 1000;
 	private final Map<String, Integer> consumedMessageTypes;
@@ -27,7 +34,7 @@ public class UserActionConsumer {
 		final ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(USER, PASSWORD, URL);
 		final Connection connection = connectionFactory.createConnection();
 
-		// Llamar a start() para permitir la recepción de mensajes
+		// Llamar a start() para permitir la recepcion de mensajes
 		connection.start();
 
 		// Creamos una sesion sin transaccionalidad y con envio de acuse automatico
@@ -81,8 +88,4 @@ public class UserActionConsumer {
 		}
 	}
 
-	public static void main(String[] args) throws JMSException {
-		final UserActionConsumer userActionConsumer = new UserActionConsumer();
-		userActionConsumer.processMessages();
-	}
 }

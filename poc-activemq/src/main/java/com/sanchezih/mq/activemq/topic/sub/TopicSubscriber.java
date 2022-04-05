@@ -1,4 +1,4 @@
-package com.sanchezih.mq.activemq.topic;
+package com.sanchezih.mq.activemq.topic.sub;
 
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
@@ -13,12 +13,12 @@ public class TopicSubscriber {
 	// Password predeterminada
 	public static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;
 
-	// Dirección de conexión predeterminada
+	// Direcci0n de conexi0n predeterminada
 	public static final String BROKER_URL = ActiveMQConnection.DEFAULT_BROKER_URL;
 
 	public static void main(String[] args) {
 
-		// Crea una fábrica de conexiones
+		// Crea una fabrica de conexiones
 		ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(USERNAME, PASSWORD, BROKER_URL);
 
 		try {
@@ -28,7 +28,7 @@ public class TopicSubscriber {
 			// Abre la conexion
 			connection.start();
 
-			// Crea una sesión sin transaccion
+			// Crea una sesion sin transaccion
 			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
 			// Crear tema

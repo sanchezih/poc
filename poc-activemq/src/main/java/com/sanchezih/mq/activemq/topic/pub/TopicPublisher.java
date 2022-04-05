@@ -1,4 +1,4 @@
-package com.sanchezih.mq.activemq.topic;
+package com.sanchezih.mq.activemq.topic.pub;
 
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
@@ -25,13 +25,13 @@ public class TopicPublisher {
 			// Crear conexion
 			Connection connection = connectionFactory.createConnection();
 
-			// Abre la conexión
+			// Abre la conexion
 			connection.start();
 
-			// Crea una sesión sin transaccion
+			// Crea una sesion sin transaccion
 			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
-			// Crear tema, utilizado como mensaje de suscripcion al consumidor
+			// Crear topic, utilizado como mensaje de suscripcion al consumidor
 			Topic myTestTopic = session.createTopic("activemq-topic-test1");
 
 			// Productor de mensajes
