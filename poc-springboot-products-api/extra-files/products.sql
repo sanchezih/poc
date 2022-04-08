@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 
 -- Volcando datos para la tabla products.products: 6 rows
 DELETE FROM `products`;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+
 INSERT INTO `products` (`id`, `name`) VALUES
 	(1, 'producto 1'),
 	(2, 'producto 2'),

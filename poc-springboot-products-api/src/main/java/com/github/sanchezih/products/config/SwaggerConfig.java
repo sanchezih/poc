@@ -1,4 +1,4 @@
-package com.init.products.config;
+package com.github.sanchezih.products.config;
 
 import java.util.Collections;
 

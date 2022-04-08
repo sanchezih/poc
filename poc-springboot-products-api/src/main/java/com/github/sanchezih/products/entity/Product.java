@@ -1,4 +1,4 @@
-package com.init.products.entity;
+package com.github.sanchezih.products.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "products")
-
 public class Product {
 
 	@Id
