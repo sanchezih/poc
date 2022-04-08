@@ -30,3 +30,4 @@ DELETE FROM `type_product`;
 INSERT INTO `type_product` (`id`, `name`) VALUES
 	(1, 'Fruta'),
 	(2, 'Verdura');
+	
