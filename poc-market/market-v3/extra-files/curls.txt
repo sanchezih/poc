@@ -6,3 +6,4 @@ curl --location --request POST 'http://localhost:8080/product' \
     "typeId": 1
 }'
 
+curl --location --request GET 'http://localhost:8080/product/1'
