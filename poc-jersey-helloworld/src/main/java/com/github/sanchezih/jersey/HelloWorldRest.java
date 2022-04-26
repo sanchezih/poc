@@ -9,8 +9,8 @@ import javax.ws.rs.core.UriInfo;
 @Path("helloworld")
 public class HelloWorldRest {
 
-	@Context
-	private UriInfo context;
+//	@Context
+//	private UriInfo context;
 
 	public HelloWorldRest() {
 	}
