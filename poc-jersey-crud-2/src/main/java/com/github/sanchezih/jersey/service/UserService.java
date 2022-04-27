@@ -18,7 +18,7 @@ import javax.ws.rs.core.Response.Status;
 import com.github.sanchezih.jersey.entity.User;
 
 @Path("/users")
-public class ServicioUsers {
+public class UserService {
 
 	private static List<User> listaUsuarios = new ArrayList<User>() {
 		{
@@ -29,9 +29,8 @@ public class ServicioUsers {
 	};
 
 	/**
-	 * URL: http://localhost:8080/poc-jersey-crud-2/api/users
 	 * 
-	 * @return Response list Users
+	 * @return
 	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -40,10 +39,9 @@ public class ServicioUsers {
 	}
 
 	/**
-	 * URL: http://localhost:8080/poc-jersey-crud-2/api/users/Rosa
 	 * 
-	 * @param name String
-	 * @return Response
+	 * @param name
+	 * @return
 	 */
 	@GET
 	@Path("/{name}")
@@ -64,12 +62,11 @@ public class ServicioUsers {
 	}
 
 	/**
-	 * URL: http://localhost:8080/API_REST_WS-RS/api/users/createUser Parameters in
-	 * Postman: {"name":"Rosa3333","username":"Marfi3333l"}
+	 * NOTA: Si no existe el constructor vacío de User, da un error y el userRequest
+	 * viene null.
 	 * 
-	 * @param User
-	 * @return Response list NOTA: Si no existe el constructor vacío de User, da un
-	 *         error y el userRequest viene null.
+	 * @param userRequest
+	 * @return
 	 */
 	@POST
 	@Path("/createUser")
@@ -84,12 +81,11 @@ public class ServicioUsers {
 	}
 
 	/**
-	 * URL: http://localhost:8080/API_REST_WS-RS/api/users/updateUser Parameters in
-	 * Postman: {"name":"Rosa","username":"Marfil3333"}
+	 * NOTA: Si no existe el constructor vacío de User, da un error y el userRequest
+	 * viene null.
 	 * 
-	 * @param User
-	 * @return user modified NOTA: Si no existe el constructor vacío de User, da un
-	 *         error y el userRequest viene null.
+	 * @param userUpdate
+	 * @return
 	 */
 	@PUT
 	@Path("/updateUser")
@@ -112,10 +108,9 @@ public class ServicioUsers {
 	}
 
 	/**
-	 * URL: http://localhost:8080/API_REST_WS-RS/api/users/deleteUser/Rosa
 	 * 
-	 * @param User
-	 * @return Response
+	 * @param name
+	 * @return
 	 */
 	@DELETE
 	@Path("/deleteUser/{name}")
