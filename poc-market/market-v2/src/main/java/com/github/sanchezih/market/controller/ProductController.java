@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.sanchezih.market.domain.Product;
@@ -27,18 +30,27 @@ public class ProductController {
 	}
 
 	/**
+	 * En esta impl utilizo @PathVariable
+	 * 
 	 * Utilizando ResponseEntity podemos devolver el status code de la respuesta
 	 * 
 	 * @return
 	 */
 	@GetMapping(path = "/product/{id}")
-	public ResponseEntity<Product> get(@PathVariable Long id) {
+	public ResponseEntity<Product> getConPathVariable(@PathVariable Long id) {
 		return new ResponseEntity<>(productService.get(id), HttpStatus.ACCEPTED);
 	}
 
-	/* En esta impl utilizo @RequestParam */
+	/**
+	 * En esta impl utilizo @RequestParam
+	 * 
+	 * https://www.baeldung.com/spring-requestparam-vs-pathvariable
+	 * 
+	 * @param id
+	 * @return
+	 */
 //	@RequestMapping(value = "/product", method = RequestMethod.GET)
-//	public ResponseEntity<Product> get(@RequestParam(name = "id") Long id) {
+//	public ResponseEntity<Product> getConRequestParam(@RequestParam(name = "id") Long id) {
 //		return new ResponseEntity<>(productService.get(id), HttpStatus.ACCEPTED);
 //	}
 
