@@ -9,15 +9,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.sanchezih.model.User;
-import com.sanchezih.util.DbUtil;
+import com.sanchezih.util.DBManager;
 
 public class UserDao {
 
+	/**
+	 * 
+	 * @param user
+	 */
 	public void addUser(User user) {
-		Connection connection = DbUtil.getInstance().connect();
+
+		Connection connection = DBManager.getInstance().connect();
+
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("insert into users(firstname,lastname,dob,email) values (?, ?, ?, ? )");
+					.prepareStatement("insert into users (firstname, lastname, dob, email) values (?, ?, ?, ? )");
+
 			// Parameters start with 1
 			preparedStatement.setString(1, user.getFirstName());
 			preparedStatement.setString(2, user.getLastName());
@@ -31,17 +38,21 @@ public class UserDao {
 			try {
 				connection.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
 
+	/**
+	 * 
+	 * @param id
+	 */
 	public void deleteUser(int id) {
-		Connection connection = DbUtil.getInstance().connect();
+		Connection connection = DBManager.getInstance().connect();
 
 		try {
-			PreparedStatement preparedStatement = connection.prepareStatement("delete from users where id=?");
+			PreparedStatement preparedStatement = connection.prepareStatement("delete from users where id = ?");
+
 			// Parameters start with 1
 			preparedStatement.setInt(1, id);
 			preparedStatement.executeUpdate();
@@ -52,18 +63,22 @@ public class UserDao {
 			try {
 				connection.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
 
+	/**
+	 * 
+	 * @param user
+	 */
 	public void updateUser(User user) {
-		Connection connection = DbUtil.getInstance().connect();
-
+		Connection connection = DBManager.getInstance().connect();
 		try {
-			PreparedStatement preparedStatement = connection
-					.prepareStatement("update users set firstname=?, lastname=?, dob=?, email=?" + "where id=?");
+
+			PreparedStatement preparedStatement = connection.prepareStatement(
+					"update users set firstname = ?, lastname = ?, dob = ?, email = ?" + " where id = ?");
+
 			// Parameters start with 1
 			preparedStatement.setString(1, user.getFirstName());
 			preparedStatement.setString(2, user.getLastName());
@@ -78,15 +93,19 @@ public class UserDao {
 			try {
 				connection.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public List<User> getAllUsers() {
 		List<User> users = new ArrayList<User>();
-		Connection connection = DbUtil.getInstance().connect();
+
+		Connection connection = DBManager.getInstance().connect();
 
 		try {
 			Statement statement = connection.createStatement();
@@ -106,7 +125,6 @@ public class UserDao {
 			try {
 				connection.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -114,9 +132,14 @@ public class UserDao {
 		return users;
 	}
 
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
 	public User getUserById(int id) {
 		User user = new User();
-		Connection connection = DbUtil.getInstance().connect();
+		Connection connection = DBManager.getInstance().connect();
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement("select * from users where id=?");
@@ -136,11 +159,9 @@ public class UserDao {
 			try {
 				connection.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-
 		return user;
 	}
 }

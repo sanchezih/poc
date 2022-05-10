@@ -4,10 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.sanchezih</groupId>
 	<artifactId>poc-jsp-mysql-crud</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<packaging>war</packaging>
-	<name>sdf</name>
-	<description>sdffsdfsdf</description>
+	<name>poc-jsp-mysql-crud</name>
+	<description>poc-jsp-mysql-crud</description>
+
 	<properties>
 		<jdk.version>11</jdk.version>
 		<jstl.version>1.2</jstl.version>
@@ -51,8 +52,6 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 		</dependency>
-
-
 
 	</dependencies>
 	<build>

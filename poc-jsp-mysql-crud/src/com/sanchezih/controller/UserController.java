@@ -15,6 +15,7 @@ import com.sanchezih.dao.UserDao;
 import com.sanchezih.model.User;
 
 public class UserController extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
 	private static String INSERT_OR_EDIT = "/WEB-INF/pages/user.jsp";
 	private static String LIST_USER = "/WEB-INF/pages/listUser.jsp";
@@ -27,8 +28,6 @@ public class UserController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		System.out.println(System.getenv("MYSQL_SERVER_CA_IP"));
 
 		String forward = "";
 		String action = request.getParameter("action");
