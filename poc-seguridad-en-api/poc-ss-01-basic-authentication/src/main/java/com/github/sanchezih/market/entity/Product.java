@@ -1,4 +1,4 @@
-package com.github.sanchezih.market.domain;
+package com.github.sanchezih.market.entity;
 
 import java.math.BigDecimal;
 

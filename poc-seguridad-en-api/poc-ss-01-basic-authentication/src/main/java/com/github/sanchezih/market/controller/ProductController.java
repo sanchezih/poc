@@ -1,5 +1,7 @@
 package com.github.sanchezih.market.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,61 +12,41 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.sanchezih.market.domain.Product;
 import com.github.sanchezih.market.dto.ProductDto;
+import com.github.sanchezih.market.entity.Product;
 import com.github.sanchezih.market.service.ProductService;
 
 @RestController
+@RequestMapping("/api/products")
 public class ProductController {
 
 	@Autowired
 	ProductService productService;
 
-	@GetMapping(path = "/holamundo")
-	public String getHolaMundo() {
-		return "Hola mundo!";
+	@GetMapping()
+	public ResponseEntity<List<Product>> getAllCategorias() {
+		List<Product> products = productService.getAll();
+		return ResponseEntity.ok(products);
 	}
 
-	/**
-	 * En esta impl utilizo @PathVariable
-	 * 
-	 * Utilizando ResponseEntity podemos devolver el status code de la respuesta
-	 * 
-	 * @return
-	 */
-	@GetMapping(path = "/product/{id}")
-	public ResponseEntity<Product> getConPathVariable(@PathVariable Long id) {
+	@GetMapping(path = "/{id}")
+	public ResponseEntity<Product> get(@PathVariable Long id) {
 		return new ResponseEntity<>(productService.get(id), HttpStatus.ACCEPTED);
 	}
 
-	/**
-	 * En esta impl utilizo @RequestParam
-	 * 
-	 * https://www.baeldung.com/spring-requestparam-vs-pathvariable
-	 * 
-	 * @param id
-	 * @return
-	 */
-//	@RequestMapping(value = "/product", method = RequestMethod.GET)
-//	public ResponseEntity<Product> getConRequestParam(@RequestParam(name = "id") Long id) {
-//		return new ResponseEntity<>(productService.get(id), HttpStatus.ACCEPTED);
-//	}
-
-	@PostMapping(path = "/product")
+	@PostMapping()
 	public ResponseEntity<Product> create(@RequestBody ProductDto dto) {
 		return new ResponseEntity<>(productService.create(dto), HttpStatus.CREATED);
 	}
 
-	@PutMapping(path = "/product")
+	@PutMapping()
 	public ResponseEntity<Product> update(@RequestBody ProductDto dto) {
 		return new ResponseEntity<>(productService.update(dto), HttpStatus.OK);
 	}
 
-	@DeleteMapping(path = "/product/{id}")
+	@DeleteMapping(path = "/{id}")
 	public ResponseEntity<String> delete(@PathVariable Long id) {
 		productService.delete(id);
 		return new ResponseEntity<>("Product deleted", HttpStatus.OK);

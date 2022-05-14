@@ -14,27 +14,38 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.csrf().disable()
-                .authorizeRequests().anyRequest().authenticated()
-                .and().httpBasic();
+	/**
+	 * Configuring the api according to the roles.
+	 */
+	@Override
+	protected void configure(HttpSecurity httpSecurity) throws Exception {
 
-    }
+		httpSecurity.csrf().disable() // Disable the CSRF feature.
+				.authorizeRequests().anyRequest().authenticated()// All requests to our application requires
+				.and().httpBasic(); // Allow users to use HTTP basic authentication.
+	}
 
-    @Autowired
-    @Override
-    public void configure(AuthenticationManagerBuilder authentication)
-            throws Exception
-    {
-        authentication.inMemoryAuthentication()
-                .withUser("admin")
-                .password(passwordEncoder().encode("nimda"))
-                .authorities("ROLE_USER");
-    }
+	/**
+	 * In this method we are creating in memory user authentication details.
+	 * 
+	 * With Spring Boot, we can always configure default user and password using the
+	 * application.properties file (We can omit the
+	 * configureGlobal(AuthenticationManagerBuilder authentication)method from above
+	 * code).
+	 * 
+	 * @param authentication
+	 * @throws Exception
+	 */
+	@Autowired
+	public void configureGlobal(AuthenticationManagerBuilder authentication) throws Exception {
+		authentication.inMemoryAuthentication() //
+				.withUser("admin") //
+				.password(passwordEncoder().encode("nimda"))//
+				.authorities("ROLE_USER");
+	}
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 }
