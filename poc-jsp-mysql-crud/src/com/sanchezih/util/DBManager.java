@@ -8,9 +8,9 @@ public class DBManager {
 
 	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 	private static final String DB_NAME = "userdb";
-	private static final String DB_URL = "jdbc:mysql://192.168.2.39/" + DB_NAME;
-	private static final String DB_USERNAME = "root";
-	private static final String DB_PASSWORD = "password1234";
+	private static final String DB_URL = "jdbc:mysql://" + System.getenv("CA_MYSQL_SERVER_IP") + "/" + DB_NAME;
+	private static final String DB_USERNAME = System.getenv("CA_MYSQL_SERVER_USERNAME");
+	private static final String DB_PASSWORD = System.getenv("CA_MYSQL_SERVER_PASSWORD");
 	private static DBManager instance = null;
 
 	private DBManager() {
