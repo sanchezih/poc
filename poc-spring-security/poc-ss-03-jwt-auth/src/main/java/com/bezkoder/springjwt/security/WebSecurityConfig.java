@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -18,6 +19,15 @@ import com.bezkoder.springjwt.security.jwt.AuthEntryPointJwt;
 import com.bezkoder.springjwt.security.jwt.AuthTokenFilter;
 import com.bezkoder.springjwt.security.services.UserDetailsServiceImpl;
 
+/**
+ * WebSecurityConfigurerAdapter is the crux of our security implementation. It
+ * provides HttpSecurity configurations to configure cors, csrf, session
+ * management, rules for protected resources. We can also extend and customize
+ * the default configuration that contains the elements below.
+ * 
+ * @author ihsanch
+ *
+ */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
@@ -40,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			"/api/test/**" };
 
 	@Autowired
-	UserDetailsServiceImpl userDetailsService;
+	UserDetailsService userDetailsService;
 
 	@Autowired
 	private AuthEntryPointJwt unauthorizedHandler;

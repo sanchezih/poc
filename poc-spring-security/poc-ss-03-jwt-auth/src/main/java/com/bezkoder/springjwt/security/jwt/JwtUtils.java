@@ -9,6 +9,14 @@ import org.springframework.stereotype.Component;
 import com.bezkoder.springjwt.security.services.UserDetailsImpl;
 import io.jsonwebtoken.*;
 
+/*-
+ * This class has 3 funtions: 
+ * 1. generate a JWT from username, date, expiration, secret 
+ * 2. get username from JWT 
+ * 3. validate a JWT
+ * @author ihsanch
+ *
+ */
 @Component
 public class JwtUtils {
 
@@ -20,6 +28,11 @@ public class JwtUtils {
 	@Value("${bezkoder.app.jwtExpirationMs}")
 	private int jwtExpirationMs;
 
+	/**
+	 * 
+	 * @param authentication
+	 * @return
+	 */
 	public String generateJwtToken(Authentication authentication) {
 		String token = null;
 		UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
