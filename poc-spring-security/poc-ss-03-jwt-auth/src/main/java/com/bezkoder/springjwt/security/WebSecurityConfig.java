@@ -20,10 +20,11 @@ import com.bezkoder.springjwt.security.jwt.AuthTokenFilter;
 import com.bezkoder.springjwt.security.services.UserDetailsServiceImpl;
 
 /**
- * WebSecurityConfigurerAdapter is the crux of our security implementation. It
- * provides HttpSecurity configurations to configure cors, csrf, session
- * management, rules for protected resources. We can also extend and customize
- * the default configuration that contains the elements below.
+ * WebSecurityConfigurerAdapter es el la clase principal de nuestra
+ * implementacion de seguridad.
+ * 
+ * Proporciona configuraciones de HttpSecurity para configurar cors, csrf,
+ * administracion de sesiones y reglas para recursos protegidos.
  * 
  * @author ihsanch
  *
@@ -34,6 +35,7 @@ import com.bezkoder.springjwt.security.services.UserDetailsServiceImpl;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	private static final String[] AUTH_WHITELIST = {
+
 			// -- Swagger UI v2
 			"/v2/api-docs", //
 			"/swagger-resources", //
@@ -42,12 +44,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			"/configuration/security", //
 			"/swagger-ui.html", //
 			"/webjars/**", //
+
 			// -- Swagger UI v3 (OpenAPI)
 			"/v3/api-docs/**", //
 			"/swagger-ui/**", //
+
 			// other public endpoints of your API may be appended to this array
 			"/api/auth/**", //
-			"/api/test/**" };
+			"/api/test/**" //
+	};
 
 	@Autowired
 	UserDetailsService userDetailsService;

@@ -35,7 +35,7 @@ import com.bezkoder.springjwt.security.services.UserDetailsImpl;
 import io.swagger.annotations.ApiOperation;
 
 /**
- * AuthController handles signup/login requests
+ * AuthController maneja los requests de signup y login
  * 
  * @author ihsanch
  *

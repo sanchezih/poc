@@ -17,10 +17,8 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import com.bezkoder.springjwt.security.services.UserDetailsServiceImpl;
 
 /**
- * OncePerRequestFilter makes a single execution for each request to our API. It
- * provides a doFilterInternal() method that we will implement parsing &
- * validating JWT, loading User details (using UserDetailsService), checking
- * Authorizaion (using UsernamePasswordAuthenticationToken).
+ * OncePerRequestFilter realiza una sola ejecución por cada solicitud a nuestra
+ * API.
  * 
  * @author ihsanch
  *
@@ -35,6 +33,11 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 	@Autowired
 	private UserDetailsServiceImpl userDetailsService;
 
+	/**
+	 * Metodo que analiza y valida el JWT, cargando los detalles del usuario (usando
+	 * UserDetailsService) y verificando la autorizacion (usando
+	 * UsernamePasswordAuthenticationToken).
+	 */
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
@@ -59,6 +62,11 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 		filterChain.doFilter(request, response);
 	}
 
+	/**
+	 * 
+	 * @param request
+	 * @return
+	 */
 	private String parseJwt(HttpServletRequest request) {
 
 		String headerAuth = request.getHeader("Authorization");

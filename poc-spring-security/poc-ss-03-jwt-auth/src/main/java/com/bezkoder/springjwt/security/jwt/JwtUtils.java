@@ -10,10 +10,10 @@ import com.bezkoder.springjwt.security.services.UserDetailsImpl;
 import io.jsonwebtoken.*;
 
 /*-
- * This class has 3 funtions: 
- * 1. generate a JWT from username, date, expiration, secret 
- * 2. get username from JWT 
- * 3. validate a JWT
+ * La clase JwtUtils tiene 3 funciones:
+ * 1. Generar un JWT desde un username, date, expiration y secret 
+ * 2. Obtener un username de un JWT 
+ * 3. Validar un JWT
  * @author ihsanch
  *
  */

@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "cd4ffa07-4644-4c5a-a9db-f9d5c1b709c6",
+		"name": "poc-ss-03-jwt-auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14824583"
+	},
+	"item": [
+		{
+			"name": "Ver contenido publico",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcnVlYmEiLCJpYXQiOjE2NDcyNjM0MDAsImV4cCI6MTY0NzM0OTgwMH0.36yqVEcBFVxbpUVc7R0IjtbZIf7mlaoxEfqkxwgX4AVDJNkBLcaAN6lwZoIgZu-EXECVHh8KgeiD58iGwn_r4A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/test/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/auth/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"usuario01\",\r\n    \"email\": \"usuario01@mail.com\",\r\n    \"password\": \"usuario01p\",\r\n    \"role\": [\r\n        \"admin\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/auth/signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"usuario01\",\r\n    \"password\": \"usuario01p\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/test/user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c3VhcmlvMDEiLCJpYXQiOjE2NTM0ODc1OTEsImV4cCI6MTY1MzU3Mzk5MX0.Kw2nCnMOpJ2p5UBzNUTNpbw4mW2FNfZ2FXUAbgD7yAyi9pN5waT3-T-EhpsATBG66_HlbJoIYZ9q5Bvj3Gyh-g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/test/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/test/admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c3VhcmlvMDEiLCJpYXQiOjE2NTM0ODc1OTEsImV4cCI6MTY1MzU3Mzk5MX0.Kw2nCnMOpJ2p5UBzNUTNpbw4mW2FNfZ2FXUAbgD7yAyi9pN5waT3-T-EhpsATBG66_HlbJoIYZ9q5Bvj3Gyh-g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/test/admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

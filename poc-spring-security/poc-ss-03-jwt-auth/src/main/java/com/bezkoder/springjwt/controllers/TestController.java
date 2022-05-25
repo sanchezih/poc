@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.ApiOperation;
 
 /**
- * TestController has accessing protected resource methods with role based
- * validations.
+ * TestController tendra acceso a metodos de recursos protegidos con
+ * validaciones basadas en roles.
  * 
  * @author ihsanch
  *
