@@ -1,4 +1,4 @@
-package com.sanchezih.mq.activemq.queue.consumidor;
+package com.sanchezih.mq.activemq.p2p.consumidor;
 
 import javax.jms.JMSException;
 

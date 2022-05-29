@@ -1,8 +1,10 @@
-package com.sanchezih.mq.activemq.queue.productor;
+package com.sanchezih.mq.activemq.p2p.productor;
 
 import javax.jms.JMSException;
 
 /**
+ * Ejemplo tomado de https://www.adictosaltrabajo.com/2012/07/25/active-mq/
+ * 
  * El emisor de mensajes envia 20 mensajes a nuestro intermediario con la
  * informacion de las acciones que realizan los usuarios.
  * 

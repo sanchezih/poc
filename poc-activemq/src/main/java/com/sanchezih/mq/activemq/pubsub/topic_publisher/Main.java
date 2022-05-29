@@ -1,11 +1,17 @@
-package com.sanchezih.mq.activemq.topic.pub;
+package com.sanchezih.mq.activemq.pubsub.topic_publisher;
+
+import javax.jms.Connection;
+import javax.jms.ConnectionFactory;
+import javax.jms.JMSException;
+import javax.jms.MessageProducer;
+import javax.jms.Session;
+import javax.jms.TextMessage;
+import javax.jms.Topic;
 
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-import javax.jms.*;
-
-public class TopicPublisher {
+public class Main {
 
 	// Nombre de usuario predeterminado
 	public static final String USERNAME = ActiveMQConnection.DEFAULT_USER;
@@ -13,25 +19,26 @@ public class TopicPublisher {
 	// Password predeterminada
 	public static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;
 
-	// Direccion de conexion predeterminada
+	// Dirección de conexión predeterminada
 	public static final String BROKER_URL = ActiveMQConnection.DEFAULT_BROKER_URL;
 
 	public static void main(String[] args) {
 
-		// Crea una fabrica de conexiones
+		// Crea una fábrica de conexiones
 		ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(USERNAME, PASSWORD, BROKER_URL);
 
 		try {
-			// Crear conexion
+
+			// Crear conexión
 			Connection connection = connectionFactory.createConnection();
 
-			// Abre la conexion
+			// Abre la conexión
 			connection.start();
 
-			// Crea una sesion sin transaccion
+			// Crea una sesión sin transacción
 			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
-			// Crear topic, utilizado como mensaje de suscripcion al consumidor
+			// Crear tema, utilizado como mensaje de suscripcion al consumidor
 			Topic myTestTopic = session.createTopic("activemq-topic-test1");
 
 			// Productor de mensajes
@@ -49,4 +56,5 @@ public class TopicPublisher {
 			e.printStackTrace();
 		}
 	}
+
 }

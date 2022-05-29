@@ -1,11 +1,19 @@
-package com.sanchezih.mq.activemq.topic.sub;
+package com.sanchezih.mq.activemq.pubsub.topic_subscriber;
+
+import javax.jms.Connection;
+import javax.jms.ConnectionFactory;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageConsumer;
+import javax.jms.MessageListener;
+import javax.jms.Session;
+import javax.jms.TextMessage;
+import javax.jms.Topic;
 
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-import javax.jms.*;
-
-public class TopicSubscriber {
+public class Main {
 
 	// Nombre de usuario predeterminado
 	public static final String USERNAME = ActiveMQConnection.DEFAULT_USER;
@@ -13,7 +21,7 @@ public class TopicSubscriber {
 	// Password predeterminada
 	public static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;
 
-	// Direcci0n de conexi0n predeterminada
+	// Direccion de conexion predeterminada
 	public static final String BROKER_URL = ActiveMQConnection.DEFAULT_BROKER_URL;
 
 	public static void main(String[] args) {
@@ -28,7 +36,7 @@ public class TopicSubscriber {
 			// Abre la conexion
 			connection.start();
 
-			// Crea una sesion sin transaccion
+			// Crea una sesión sin transaccion
 			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
 			// Crear tema
@@ -36,6 +44,7 @@ public class TopicSubscriber {
 
 			MessageConsumer messageConsumer = session.createConsumer(myTestTopic);
 			messageConsumer.setMessageListener(new MessageListener() {
+			
 				@Override
 				public void onMessage(Message message) {
 					try {
@@ -72,11 +81,11 @@ public class TopicSubscriber {
 
 			/**
 			 * Deje que el hilo principal duerma durante 100 segundos, para que el objeto
-			 * consumidor de mensajes pueda continuar activo durante un periodo de tiempo
+			 * consumidor de mensajes pueda continuar activo durante un período de tiempo
 			 * para que el mensaje pueda ser monitoreado
 			 */
 			Thread.sleep(100 * 1000);
-
+			
 			// Cerrar recursos
 			session.close();
 			connection.close();
@@ -84,4 +93,5 @@ public class TopicSubscriber {
 			e.printStackTrace();
 		}
 	}
+
 }

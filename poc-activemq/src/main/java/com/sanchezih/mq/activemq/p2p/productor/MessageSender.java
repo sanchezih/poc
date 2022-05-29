@@ -1,4 +1,4 @@
-package com.sanchezih.mq.activemq.queue.productor;
+package com.sanchezih.mq.activemq.p2p.productor;
 
 import java.util.Random;
 
