@@ -19,23 +19,23 @@ public class Main {
 	// Password predeterminada
 	public static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;
 
-	// Dirección de conexión predeterminada
+	// Direccion de conexion predeterminada
 	public static final String BROKER_URL = ActiveMQConnection.DEFAULT_BROKER_URL;
 
 	public static void main(String[] args) {
 
-		// Crea una fábrica de conexiones
+		// Crea una fabrica de conexiones
 		ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(USERNAME, PASSWORD, BROKER_URL);
 
 		try {
 
-			// Crear conexión
+			// Crear conexion
 			Connection connection = connectionFactory.createConnection();
 
-			// Abre la conexión
+			// Abre la conexion
 			connection.start();
 
-			// Crea una sesión sin transacción
+			// Crea una sesion sin transaccion
 			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
 			// Crear tema, utilizado como mensaje de suscripcion al consumidor
