@@ -25,24 +25,47 @@ public class MessageSender {
 
 	public void sendMessages() throws JMSException {
 
+		/*
+		 * ActiveMQConnectionFactory se utiliza para crear una conexion con el
+		 * proveedor, encapsulando un conjunto de parametros de configuracion de la
+		 * conexion que han sido previamente definidos por el administrador del servidor
+		 * de mensajes
+		 */
 		final ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(USER, PASSWORD, URL);
 
+		/*
+		 * Mediante una Connection se crean una o mas sesiones en las que se producen y
+		 * se consumen mensajes.
+		 */
 		Connection connection = connectionFactory.createConnection();
 
-		// Llamar a start() para permitir el envio de mensajes
+		/*
+		 * Llamada a start() para permitir el envio de mensajes
+		 */
 		connection.start();
 
-		// Creamos una sesion sin transaccionalidad y con envio de acuse automatico
+		/*
+		 * Se crea una sesion transaccional
+		 */
 		final Session session = connection.createSession(TRANSACTED_SESSION, Session.AUTO_ACKNOWLEDGE);
+
 		final Destination destination = session.createQueue(DESTINATION_QUEUE);
 
-		// Creamos el productor a partir de una cola
+		/*
+		 * Se crea el productor a partir de una cola
+		 */
 		final MessageProducer producer = session.createProducer(destination);
 		producer.setDeliveryMode(DeliveryMode.PERSISTENT);
 		sendMessages(session, producer);
 		session.commit();
+
+		/*
+		 * Al finalizar se cierra toda conexion
+		 * 
+		 */
 		session.close();
 		connection.close();
+
 		System.out.println("Mensajes enviados correctamente");
 	}
 
