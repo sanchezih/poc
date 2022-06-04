@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "79c9260f-b24d-44e4-9f7a-4666c64dbf6b",
+		"name": "poc-restapi-jmstemplate-p2p",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14824583"
+	},
+	"item": [
+		{
+			"name": "produce/message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentId\": \"20\",\r\n    \"name\": \"rakesh\",\r\n    \"rollNumber\": \"0126CS01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/produce/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"produce",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consume/message",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/consume/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"consume",
+						"message"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
