@@ -1,18 +1,15 @@
 package com.github.sanchezih.cxf.src;
 
-
-
 import java.util.List;
 
-
-
 public interface PersonasSEI {
+
 	/**
-	 * Añade una persona al listado
+	 * Agrega una persona al listado
 	 * 
 	 * @param persona
 	 */
-	void addPersona(Persona persona);
+	public void addPersona(Persona persona);
 
 	/**
 	 * Devuelve una persona y en caso de no encontrarla lanza una excepcion
@@ -21,14 +18,14 @@ public interface PersonasSEI {
 	 * @return
 	 * @throws Exception
 	 */
-	Persona getPersona(String nombre) throws Exception;
+	public Persona getPersona(String nombre) throws Exception;
 
 	/**
 	 * Obtiene el listado de personas almacenado
 	 * 
 	 * @return
 	 */
-	List<Persona> getPersonas();
+	public List<Persona> getPersonas();
 
 	/**
 	 * Elimina una persona del listado y si no existe lanza una excepcion
@@ -36,5 +33,5 @@ public interface PersonasSEI {
 	 * @param nombre
 	 * @throws Exception
 	 */
-	void removePersona(String nombre) throws Exception;
+	public void removePersona(String nombre) throws Exception;
 }
