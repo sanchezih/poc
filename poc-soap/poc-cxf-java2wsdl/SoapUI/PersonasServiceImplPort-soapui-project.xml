@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f59a9c23-ff65-44aa-a16c-c5936b56e5e3" activeEnvironment="Default" name="PersonasServiceImplPort" resourceRoot="" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="9cac02da-a738-4508-a573-7e595fb8d7fc" wsaVersion="NONE" name="PersonasServiceImplServiceSoapBinding" type="wsdl" bindingName="{http://src.cxf.sanchezih.github.com/}PersonasServiceImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/ihsanch/git/poc/poc-soap/poc-cxf-java2wsdl/WSDL/PersonasServiceImplPort.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\ihsanch\git\poc\poc-soap\poc-cxf-java2wsdl\WSDL\PersonasServiceImplPort.wsdl"><con:part><con:url>file:\C:\Users\ihsanch\git\poc\poc-soap\poc-cxf-java2wsdl\WSDL\PersonasServiceImplPort.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PersonasServiceImplService" targetNamespace="http://src.cxf.sanchezih.github.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://src.cxf.sanchezih.github.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://src.cxf.sanchezih.github.com/" schemaLocation="http://localhost:8080/poc-cxf-java2wsdl/services/PersonasServiceImplPort?xsd=personassei_schema1.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="removePersonaResponse">
+    <wsdl:part element="tns:removePersonaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPersona">
+    <wsdl:part element="tns:addPersona" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersonasResponse">
+    <wsdl:part element="tns:getPersonasResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPersonaResponse">
+    <wsdl:part element="tns:addPersonaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part element="tns:Exception" name="Exception"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersonas">
+    <wsdl:part element="tns:getPersonas" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removePersona">
+    <wsdl:part element="tns:removePersona" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersonaResponse">
+    <wsdl:part element="tns:getPersonaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersona">
+    <wsdl:part element="tns:getPersona" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PersonasSEI">
+    <wsdl:operation name="addPersona">
+      <wsdl:input message="tns:addPersona" name="addPersona"></wsdl:input>
+      <wsdl:output message="tns:addPersonaResponse" name="addPersonaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonas">
+      <wsdl:input message="tns:getPersonas" name="getPersonas"></wsdl:input>
+      <wsdl:output message="tns:getPersonasResponse" name="getPersonasResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePersona">
+      <wsdl:input message="tns:removePersona" name="removePersona"></wsdl:input>
+      <wsdl:output message="tns:removePersonaResponse" name="removePersonaResponse"></wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPersona">
+      <wsdl:input message="tns:getPersona" name="getPersona"></wsdl:input>
+      <wsdl:output message="tns:getPersonaResponse" name="getPersonaResponse"></wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PersonasServiceImplServiceSoapBinding" type="tns:PersonasSEI">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addPersona">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addPersona">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addPersonaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonas">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getPersonas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPersonasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePersona">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="removePersona">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removePersonaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPersona">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getPersona">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPersonaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PersonasServiceImplService">
+    <wsdl:port binding="tns:PersonasServiceImplServiceSoapBinding" name="PersonasServiceImplPort">
+      <soap:address location="http://localhost:8080/poc-cxf-java2wsdl/services/PersonasServiceImplPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/poc-cxf-java2wsdl/services/PersonasServiceImplPort?xsd=personassei_schema1.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://src.cxf.sanchezih.github.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://src.cxf.sanchezih.github.com/">
+  <xs:element name="addPersona" type="tns:addPersona"/>
+  <xs:element name="addPersonaResponse" type="tns:addPersonaResponse"/>
+  <xs:element name="getPersona" type="tns:getPersona"/>
+  <xs:element name="getPersonaResponse" type="tns:getPersonaResponse"/>
+  <xs:element name="getPersonas" type="tns:getPersonas"/>
+  <xs:element name="getPersonasResponse" type="tns:getPersonasResponse"/>
+  <xs:element name="removePersona" type="tns:removePersona"/>
+  <xs:element name="removePersonaResponse" type="tns:removePersonaResponse"/>
+  <xs:complexType name="addPersona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:persona"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="persona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidos" type="xs:string"/>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addPersonaResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getPersonas">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getPersonasResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:persona"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removePersona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removePersonaResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getPersona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPersonaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:persona"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Exception" type="tns:Exception"/>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/poc-cxf-java2wsdl/services/PersonasServiceImplPort</con:endpoint></con:endpoints><con:operation id="7d94f0c0-17ac-4f67-bdcc-68f1f4401e57" isOneWay="false" action="" name="addPersona" bindingOperationName="addPersona" type="Request-Response" outputName="addPersonaResponse" inputName="addPersona" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ab7fc42a-62ef-43f6-9362-2eb8f8e37cab" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/poc-cxf-java2wsdl/services/PersonasServiceImplPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:src="http://src.cxf.sanchezih.github.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <src:addPersona>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <apellidos>?</apellidos>\r
+            <!--Optional:-->\r
+            <nombre>?</nombre>\r
+         </arg0>\r
+      </src:addPersona>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://src.cxf.sanchezih.github.com/PersonasSEI/addPersona"/></con:call></con:operation><con:operation id="3a360e42-38ba-4073-b43d-f6dc287e6e3d" isOneWay="false" action="" name="getPersona" bindingOperationName="getPersona" type="Request-Response" outputName="getPersonaResponse" inputName="getPersona" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2992ca56-9703-4e18-86b3-ce7542214ce7" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/poc-cxf-java2wsdl/services/PersonasServiceImplPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:src="http://src.cxf.sanchezih.github.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <src:getPersona>\r
+         <!--Optional:-->\r
+         <arg0>?</arg0>\r
+      </src:getPersona>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://src.cxf.sanchezih.github.com/PersonasSEI/getPersona"/></con:call></con:operation><con:operation id="57309978-af6f-4dad-a911-8062858e3311" isOneWay="false" action="" name="getPersonas" bindingOperationName="getPersonas" type="Request-Response" outputName="getPersonasResponse" inputName="getPersonas" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="eb7c356a-a494-4fa9-a93c-2b786f717d81" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/poc-cxf-java2wsdl/services/PersonasServiceImplPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:src="http://src.cxf.sanchezih.github.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <src:getPersonas/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://src.cxf.sanchezih.github.com/PersonasSEI/getPersonas"/></con:call></con:operation><con:operation id="6e1ab6a0-e60f-46dd-8768-4d939385b0b4" isOneWay="false" action="" name="removePersona" bindingOperationName="removePersona" type="Request-Response" outputName="removePersonaResponse" inputName="removePersona" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="57ea1d4d-9756-4703-841f-34eb820bf698" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/poc-cxf-java2wsdl/services/PersonasServiceImplPort</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:src="http://src.cxf.sanchezih.github.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <src:removePersona>\r
+         <!--Optional:-->\r
+         <arg0>?</arg0>\r
+      </src:removePersona>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://src.cxf.sanchezih.github.com/PersonasSEI/removePersona"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

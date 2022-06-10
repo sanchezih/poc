@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://src.cxf.sanchezih.github.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="PersonasServiceImplService" targetNamespace="http://src.cxf.sanchezih.github.com/">
+  <wsdl:types>
+<schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://src.cxf.sanchezih.github.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://www.w3.org/2001/XMLSchema">
+  
+  <import namespace="http://src.cxf.sanchezih.github.com/" schemaLocation="http://localhost:8080/poc-cxf-java2wsdl/services/PersonasServiceImplPort?xsd=personassei_schema1.xsd"/>
+
+</schema>
+  </wsdl:types>
+  <wsdl:message name="removePersonaResponse">
+    <wsdl:part element="tns:removePersonaResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPersona">
+    <wsdl:part element="tns:addPersona" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersonasResponse">
+    <wsdl:part element="tns:getPersonasResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPersonaResponse">
+    <wsdl:part element="tns:addPersonaResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part element="tns:Exception" name="Exception">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersonas">
+    <wsdl:part element="tns:getPersonas" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removePersona">
+    <wsdl:part element="tns:removePersona" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersonaResponse">
+    <wsdl:part element="tns:getPersonaResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPersona">
+    <wsdl:part element="tns:getPersona" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PersonasSEI">
+    <wsdl:operation name="addPersona">
+      <wsdl:input message="tns:addPersona" name="addPersona">
+    </wsdl:input>
+      <wsdl:output message="tns:addPersonaResponse" name="addPersonaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonas">
+      <wsdl:input message="tns:getPersonas" name="getPersonas">
+    </wsdl:input>
+      <wsdl:output message="tns:getPersonasResponse" name="getPersonasResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePersona">
+      <wsdl:input message="tns:removePersona" name="removePersona">
+    </wsdl:input>
+      <wsdl:output message="tns:removePersonaResponse" name="removePersonaResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPersona">
+      <wsdl:input message="tns:getPersona" name="getPersona">
+    </wsdl:input>
+      <wsdl:output message="tns:getPersonaResponse" name="getPersonaResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PersonasServiceImplServiceSoapBinding" type="tns:PersonasSEI">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addPersona">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addPersona">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addPersonaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonas">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getPersonas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPersonasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePersona">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="removePersona">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removePersonaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPersona">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getPersona">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPersonaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PersonasServiceImplService">
+    <wsdl:port binding="tns:PersonasServiceImplServiceSoapBinding" name="PersonasServiceImplPort">
+      <soap:address location="http://localhost:8080/poc-cxf-java2wsdl/services/PersonasServiceImplPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
