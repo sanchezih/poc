@@ -1,10 +1,9 @@
-package com.sanchez.di.spring;
+package com.sanchezih.di.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component // Estereotipo generico para cualquier componente administrado por Spring
 public class Fabrica {
 
 	@Autowired
