@@ -9,7 +9,7 @@ public class GeneradorDeDocumento {
 	}
 
 	public Exportador getExportador() {
-		return exportador;
+		return this.exportador;
 	}
 
 	public void setExportador(Exportador exportador) {
