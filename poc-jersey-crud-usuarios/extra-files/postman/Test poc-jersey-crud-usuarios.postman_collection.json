@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "29f7f1f4-5e40-4e35-8acf-e7cb811de8b1",
-		"name": "Test poc-jersey-crud-2",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "3c89ae5e-76c3-4ca3-8969-21a6c26c91db",
+		"name": "Test poc-jersey-crud-usuarios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14824583"
 	},
 	"item": [
 		{
@@ -11,14 +12,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/poc-jersey-crud-2/api/users",
+					"raw": "http://localhost:8080/poc-jersey-crud-usuarios/api/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"poc-jersey-crud-2",
+						"poc-jersey-crud-usuarios",
 						"api",
 						"users"
 					]
@@ -32,14 +33,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/poc-jersey-crud-2/api/users/Rosa",
+					"raw": "http://localhost:8080/poc-jersey-crud-usuarios/api/users/Rosa",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"poc-jersey-crud-2",
+						"poc-jersey-crud-usuarios",
 						"api",
 						"users",
 						"Rosa"
@@ -63,14 +64,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/poc-jersey-crud-2/api/users/createUser",
+					"raw": "http://localhost:8080/poc-jersey-crud-usuarios/api/users/createUser",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"poc-jersey-crud-2",
+						"poc-jersey-crud-usuarios",
 						"api",
 						"users",
 						"createUser"
@@ -94,14 +95,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/poc-jersey-crud-2/api/users/updateUser",
+					"raw": "http://localhost:8080/poc-jersey-crud-usuarios/api/users/updateUser",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"poc-jersey-crud-2",
+						"poc-jersey-crud-usuarios",
 						"api",
 						"users",
 						"updateUser"
@@ -125,14 +126,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/poc-jersey-crud-2/api/users/deleteUser/Rosa",
+					"raw": "http://localhost:8080/poc-jersey-crud-usuarios/api/users/deleteUser/Rosa",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"poc-jersey-crud-2",
+						"poc-jersey-crud-usuarios",
 						"api",
 						"users",
 						"deleteUser",

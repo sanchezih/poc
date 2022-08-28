@@ -4,10 +4,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.sanchezih</groupId>
-	<artifactId>poc-jersey-crud-2</artifactId>
+	<artifactId>poc-jersey-crud-usuarios</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
-	<name>poc-jersey-crud Maven Webapp</name>
+	<name>poc-jersey-crud-usuarios</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -41,7 +41,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>poc-jersey-crud-2</finalName>
+		<finalName>poc-jersey-crud-usuarios</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -55,6 +55,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.1</version>
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
