@@ -8,6 +8,9 @@ public class Usuario implements Serializable {
 	public String username;
 	public String name;
 
+	public Usuario() {
+	}
+
 	public Usuario(String username, String name) {
 		super();
 		this.username = username;
