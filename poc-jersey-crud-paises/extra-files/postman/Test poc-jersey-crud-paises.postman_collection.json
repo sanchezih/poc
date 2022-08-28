@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "e7b1ad93-7437-42ac-adf3-d3314cf3d100",
-		"name": "Test poc-jersey-crud",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "28d9078c-4b11-460f-b6ba-242cc2afc967",
+		"name": "Test poc-jersey-crud-paises",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14824583"
 	},
 	"item": [
 		{
@@ -11,14 +12,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/poc-jersey-crud/rest/paises",
+					"raw": "http://localhost:8080/poc-jersey-crud-paises/rest/paises",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"poc-jersey-crud",
+						"poc-jersey-crud-paises",
 						"rest",
 						"paises"
 					]
@@ -41,14 +42,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/poc-jersey-crud/rest/paises",
+					"raw": "http://localhost:8080/poc-jersey-crud-paises/rest/paises",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"poc-jersey-crud",
+						"poc-jersey-crud-paises",
 						"rest",
 						"paises"
 					]
@@ -62,14 +63,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/poc-jersey-crud/rest/paises",
+					"raw": "http://localhost:8080/poc-jersey-crud-paises/rest/paises",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"poc-jersey-crud",
+						"poc-jersey-crud-paises",
 						"rest",
 						"paises"
 					]
@@ -83,14 +84,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/poc-jersey-crud/rest/paises/4",
+					"raw": "http://localhost:8080/poc-jersey-crud-paises/rest/paises/4",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"poc-jersey-crud",
+						"poc-jersey-crud-paises",
 						"rest",
 						"paises",
 						"4"
@@ -105,14 +106,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/poc-jersey-crud/rest/paises",
+					"raw": "http://localhost:8080/poc-jersey-crud-paises/rest/paises",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"poc-jersey-crud",
+						"poc-jersey-crud-paises",
 						"rest",
 						"paises"
 					]

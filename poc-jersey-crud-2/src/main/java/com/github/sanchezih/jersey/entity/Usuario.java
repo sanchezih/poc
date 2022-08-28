@@ -2,19 +2,17 @@ package com.github.sanchezih.jersey.entity;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class Usuario implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
 	public String name;
-
 	public String username;
 
-	public User() {
+	public Usuario() {
 		super();
 	}
 
-	public User(String name, String username) {
+	public Usuario(String name, String username) {
 		super();
 		this.name = name;
 		this.username = username;

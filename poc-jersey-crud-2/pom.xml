@@ -1,6 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.sanchezih</groupId>
 	<artifactId>poc-jersey-crud-2</artifactId>
@@ -8,9 +9,11 @@
 	<version>1.0.0</version>
 	<name>poc-jersey-crud Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+
 	<properties>
 		<jersey.version>1.18.3</jersey.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -36,6 +39,7 @@
 			<version>1.2</version>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<finalName>poc-jersey-crud-2</finalName>
 		<plugins>

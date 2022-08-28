@@ -15,23 +15,20 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import com.github.sanchezih.jersey.entity.User;
+import com.github.sanchezih.jersey.entity.Usuario;
 
 @Path("/users")
-public class UserService {
+public class UsuarioService {
 
-	private static List<User> listaUsuarios = new ArrayList<User>() {
+	private static List<Usuario> listaUsuarios = new ArrayList<Usuario>() {
+		private static final long serialVersionUID = 1L;
 		{
-			add(new User("Rosa", "Marfil"));
-			add(new User("Pepito", "Grillo"));
-			add(new User("Manuela", "Lago"));
+			add(new Usuario("Rosa", "Marfil"));
+			add(new Usuario("Pepito", "Grillo"));
+			add(new Usuario("Manuela", "Lago"));
 		}
 	};
 
-	/**
-	 * 
-	 * @return
-	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getUsers() {
@@ -48,7 +45,7 @@ public class UserService {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getUserById(@PathParam("name") String name) {
-		User found = null;
+		Usuario found = null;
 		for (int i = 0; i < listaUsuarios.size(); i++) {
 			if (listaUsuarios.get(i).getName().equalsIgnoreCase(name)) {
 				found = listaUsuarios.get(i);
@@ -62,7 +59,7 @@ public class UserService {
 	}
 
 	/**
-	 * NOTA: Si no existe el constructor vacío de User, da un error y el userRequest
+	 * NOTA: Si no existe el constructor vacï¿½o de User, da un error y el userRequest
 	 * viene null.
 	 * 
 	 * @param userRequest
@@ -72,7 +69,7 @@ public class UserService {
 	@Path("/createUser")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response createUser(User userRequest) {
+	public Response createUser(Usuario userRequest) {
 
 		this.listaUsuarios.add(userRequest);
 		// return Response.status(Status.CREATED).build();
@@ -81,7 +78,7 @@ public class UserService {
 	}
 
 	/**
-	 * NOTA: Si no existe el constructor vacío de User, da un error y el userRequest
+	 * NOTA: Si no existe el constructor vacï¿½o de User, da un error y el userRequest
 	 * viene null.
 	 * 
 	 * @param userUpdate
@@ -91,8 +88,8 @@ public class UserService {
 	@Path("/updateUser")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response updateUser(User userUpdate) {
-		User found = null;
+	public Response updateUser(Usuario userUpdate) {
+		Usuario found = null;
 		for (int i = 0; i < listaUsuarios.size(); i++) {
 			if (listaUsuarios.get(i).getName().equalsIgnoreCase(userUpdate.getName())) {
 				found = listaUsuarios.get(i);
@@ -116,7 +113,7 @@ public class UserService {
 	@Path("/deleteUser/{name}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response deleteUser(@PathParam("name") String name) {
-		User found = null;
+		Usuario found = null;
 		for (int i = 0; i < listaUsuarios.size(); i++) {
 			if (listaUsuarios.get(i).getName().equalsIgnoreCase(name)) {
 				found = listaUsuarios.get(i);

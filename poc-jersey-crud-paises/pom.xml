@@ -1,16 +1,16 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.sanchezih</groupId>
-	<artifactId>poc-jersey-crud</artifactId>
+	<artifactId>poc-jersey-crud-paises</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
-	<name>poc-jersey-crud Maven Webapp</name>
+	<name>poc-jersey-crud-paises</name>
 	<url>http://maven.apache.org</url>
+
 	<properties>
 		<jersey.version>1.18.3</jersey.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -36,8 +36,9 @@
 			<version>1.2</version>
 		</dependency>
 	</dependencies>
+
 	<build>
-		<finalName>poc-jersey-crud</finalName>
+		<finalName>poc-jersey-crud-paises</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -51,6 +52,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.1</version>
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
