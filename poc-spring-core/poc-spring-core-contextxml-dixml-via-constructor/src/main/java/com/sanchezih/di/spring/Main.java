@@ -6,8 +6,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
 	public static void main(String[] args) {
-		BeanFactory factory = new ClassPathXmlApplicationContext("app-context.xml");
-		Libro libro = (Libro) factory.getBean("libro");
+		BeanFactory applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+		Libro libro = (Libro) applicationContext.getBean("libro");
+	
 		System.out.println("- " + libro.getTitulo());
 		System.out.println("- " + libro.getAutor().getNombre() + " " + libro.getAutor().getApellido());
 		System.out.println("- " + libro.getEditorial());
