@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HelloController {
 
+	// http://localhost:8080/poc-spring-web-mvc/hello
 	@RequestMapping(value = "/hello")
 	public ModelAndView saluda() {
 		ModelAndView mv = new ModelAndView();
