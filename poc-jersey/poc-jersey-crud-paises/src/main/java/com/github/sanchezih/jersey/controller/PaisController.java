@@ -19,11 +19,14 @@ public class PaisController {
 
 	PaisService paisService = new PaisService();
 
-	// http://localhost:8080/poc-jersey-crud/rest/paises
+	/**
+	 * http://localhost:8080/poc-jersey-crud-paises/rest/paises
+	 * 
+	 * @return
+	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Pais> getPaises() {
-
 		List<Pais> paises = paisService.getAllPaises();
 		return paises;
 	}

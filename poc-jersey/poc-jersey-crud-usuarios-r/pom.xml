@@ -6,10 +6,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.sanchezih</groupId>
-	<artifactId>poc-jersey-crud-usuarios</artifactId>
+	<artifactId>poc-jersey-crud-usuarios-r</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
-	<name>poc-jersey-crud-usuarios</name>
+	<name>poc-jersey-crud-usuarios-r</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
