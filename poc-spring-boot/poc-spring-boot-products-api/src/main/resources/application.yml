@@ -10,6 +10,6 @@ spring:
         dialect: org.hibernate.dialect.MySQL5Dialect
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:33060/products?zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+    url: jdbc:mysql://192.168.2.15:33060/products?zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
     username: root
-    password: password1234
+    password: Unapassword1234!

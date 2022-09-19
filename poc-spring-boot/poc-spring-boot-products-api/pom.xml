@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.sanchezih</groupId>
-	<artifactId>poc-springboot-products-api</artifactId>
+	<artifactId>poc-spring-boot-products-api</artifactId>
 	<version>1.0.0</version>
-	<name>poc-springboot-products-api</name>
+	<name>poc-spring-boot-products-api</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
