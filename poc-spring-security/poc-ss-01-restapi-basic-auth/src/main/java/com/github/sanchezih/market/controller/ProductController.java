@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.sanchezih.market.dto.ProductDto;
+import com.github.sanchezih.market.dto.ProductDTO;
 import com.github.sanchezih.market.entity.Product;
 import com.github.sanchezih.market.service.ProductService;
 
@@ -37,19 +37,19 @@ public class ProductController {
 	}
 
 	@PostMapping()
-	public ResponseEntity<Product> create(@RequestBody ProductDto dto) {
+	public ResponseEntity<Product> create(@RequestBody ProductDTO dto) {
 		return new ResponseEntity<>(productService.create(dto), HttpStatus.CREATED);
 	}
 
 	@PutMapping()
-	public ResponseEntity<Product> update(@RequestBody ProductDto dto) {
+	public ResponseEntity<Product> update(@RequestBody ProductDTO dto) {
 		return new ResponseEntity<>(productService.update(dto), HttpStatus.OK);
 	}
 
 	@DeleteMapping(path = "/{id}")
 	public ResponseEntity<String> delete(@PathVariable Long id) {
 		productService.delete(id);
-		return new ResponseEntity<>("Product deleted", HttpStatus.OK);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
 }

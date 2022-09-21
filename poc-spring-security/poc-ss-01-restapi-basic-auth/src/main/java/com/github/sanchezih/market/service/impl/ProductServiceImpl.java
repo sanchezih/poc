@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.github.sanchezih.market.dto.ProductDto;
+import com.github.sanchezih.market.dto.ProductDTO;
 import com.github.sanchezih.market.entity.Product;
 import com.github.sanchezih.market.repository.ProductRepository;
 import com.github.sanchezih.market.service.ProductService;
@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public Product create(ProductDto dto) {
+	public Product create(ProductDTO dto) {
 		Product product = new Product();
 		product.setName(dto.getName());
 		product.setCost(dto.getCost());
@@ -41,7 +41,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public Product update(ProductDto dto) {
+	public Product update(ProductDTO dto) {
 		Optional<Product> productOp = productRepository.findById(dto.getId());
 		if (productOp.isPresent()) {
 			Product product = productOp.get();

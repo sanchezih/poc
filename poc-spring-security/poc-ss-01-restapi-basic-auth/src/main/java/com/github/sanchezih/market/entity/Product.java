@@ -21,6 +21,8 @@ public class Product {
 	@Column(nullable = false)
 	private BigDecimal cost;
 
+	/*------------------------------------------------------------------------*/
+
 	public Product() {
 
 	}
@@ -30,6 +32,8 @@ public class Product {
 		this.name = name;
 		this.cost = cost;
 	}
+
+	/*----------------------------------------------------------------------------*/
 
 	public Long getId() {
 		return id;

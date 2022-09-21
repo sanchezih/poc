@@ -1,0 +1,11 @@
+Curls a utilizar para ApplicationSecurityConfig2
+------------------------------------------------
+
+-> OK
+curl -v -u 'admin:nimda' --request GET 'http://localhost:8080/api/products'
+
+-> NOK
+curl -v -u 'admin:incorrecta' --request GET 'http://localhost:8080/api/products'
+
+-> NOK
+curl -v -u 'inexistente:nimda' --request GET 'http://localhost:8080/api/products'

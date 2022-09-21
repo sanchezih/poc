@@ -1,10 +1,8 @@
-package com.github.sanchezih.market.security;
 //package com.github.sanchezih.market.security;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
-//import org.springframework.http.HttpMethod;
 //import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 //import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 //import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -12,6 +10,13 @@ package com.github.sanchezih.market.security;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 //
+///**
+// * Ejemplo basado en
+// * https://www.javadevjournal.com/spring/basic-authentication-with-spring-security/
+// * 
+// * @author ihsanch
+// *
+// */
 //@Configuration
 //@EnableWebSecurity
 //public class WebSecurityConfig2 extends WebSecurityConfigurerAdapter {
@@ -21,16 +26,10 @@ package com.github.sanchezih.market.security;
 //	 */
 //	@Override
 //	protected void configure(HttpSecurity httpSecurity) throws Exception {
-//		httpSecurity //
-//				.csrf().disable() //
-//				.authorizeRequests() //
-//				.antMatchers(HttpMethod.DELETE, "/api/products/**").hasRole("maestro") //
-//				.antMatchers(HttpMethod.PUT, "/api/products").hasRole("maestro") //
-//				.antMatchers(HttpMethod.POST, "/api/products").hasRole("maestro") //
-//				.antMatchers(HttpMethod.GET, "/api/products").hasAnyRole("maestro", "aprendiz") //
-//				.anyRequest().authenticated() //
-//				.and() //
-//				.httpBasic(); //
+//
+//		httpSecurity.csrf().disable() // Disable the CSRF feature.
+//				.authorizeRequests().anyRequest().authenticated()// All requests to our application requires
+//				.and().httpBasic(); // Allow users to use HTTP basic authentication.
 //	}
 //
 //	/**
@@ -46,14 +45,9 @@ package com.github.sanchezih.market.security;
 //	 */
 //	@Autowired
 //	public void configureGlobal(AuthenticationManagerBuilder authentication) throws Exception {
-//		authentication.inMemoryAuthentication() //
-//				.withUser("obiwan") //
-//				.password(passwordEncoder().encode("obiwanpasswd")) //
-//				.roles("maestro") //
-//				.and() //
-//				.withUser("luke") //
-//				.password(passwordEncoder().encode("lukepasswd")) //
-//				.roles("aprendiz"); //
+//		authentication.inMemoryAuthentication().withUser("admin") //
+//				.password(passwordEncoder().encode("nimda")) //
+//				.authorities("ROLE_USER");
 //	}
 //
 //	@Bean
