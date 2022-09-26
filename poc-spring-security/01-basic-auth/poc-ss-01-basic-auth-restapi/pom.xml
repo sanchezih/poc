@@ -10,10 +10,10 @@
 	</parent>
 
 	<groupId>com.github.sanchezih</groupId>
-	<artifactId>poc-ss-01-restapi-basic-auth</artifactId>
+	<artifactId>poc-ss-01-basic-auth-restapi</artifactId>
 	<version>1.0.0</version>
-	<name>poc-ss-01-restapi-basic-auth</name>
-	<description>Demo project for Spring Boot</description>
+	<name>poc-ss-01-basic-auth-restapi</name>
+	<description>poc-ss-01-basic-auth-restapi</description>
 
 	<properties>
 		<java.version>11</java.version>

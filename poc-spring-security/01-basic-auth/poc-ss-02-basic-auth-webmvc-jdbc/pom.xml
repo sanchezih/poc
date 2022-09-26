@@ -12,10 +12,10 @@
 	</parent>
 
 	<groupId>com.github.sanchezih</groupId>
-	<artifactId>poc-ss-02-webmvc-basic-auth-jdbc</artifactId>
+	<artifactId>poc-ss-02-basic-auth-webmvc-jdbc</artifactId>
 	<version>1.0.1</version>
-	<name>poc-ss-02-basic-authentication-jdbc</name>
-	<description>poc-ss-02-webmvc-basic-auth-jdbc</description>
+	<name>poc-ss-02-basic-auth-webmvc-jdbc</name>
+	<description>poc-ss-02-basic-auth-webmvc-jdbc</description>
 	<packaging>war</packaging>
 
 	<properties>
