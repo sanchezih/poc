@@ -55,3 +55,27 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+
+
+577
+
+You can run Postgres this way (map a port):
+
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
+So now you have mapped the port 5432 of your container to port 5432 of your server. -p <host_port>:<container_port> .So now your postgres is accessible from your public-server-ip:5432
+
+To test: Run the postgres database (command above)
+
+docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                     NAMES
+05b3a3471f6f        postgres            "/docker-entrypoint.s"   1 seconds ago       Up 1 seconds        0.0.0.0:5432->5432/tcp    some-postgres
+Go inside your container and create a database:
+
+docker exec -it 05b3a3471f6f bash
+root@05b3a3471f6f:/# psql -U postgres
+postgres-# CREATE DATABASE mytest;
+postgres-# \q
+Go to your localhost (where you have some tool or the psql client).
+
+psql -h public-ip-server -p 5432 -U postgres
