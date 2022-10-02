@@ -1,18 +1,3 @@
-/**
- * Copyright 2019 Greg Whitaker
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package springboot.apikey.example.auth;
 
 import java.sql.Connection;
@@ -39,15 +24,22 @@ import springboot.apikey.example.util.UUIDUtil;
  * Handles authenticating api keys against the database.
  */
 public class ApiKeyAuthManager implements AuthenticationManager {
-	private static final Logger LOG = LoggerFactory.getLogger(ApiKeyAuthManager.class);
 
+	private static final Logger LOG = LoggerFactory.getLogger(ApiKeyAuthManager.class);
 	private final LoadingCache<String, Boolean> keys;
+
+	/*----------------------------------------------------------------------------*/
 
 	public ApiKeyAuthManager(DataSource dataSource) {
 		this.keys = Caffeine.newBuilder().expireAfterAccess(5, TimeUnit.MINUTES)
 				.build(new DatabaseCacheLoader(dataSource));
 	}
 
+	/*----------------------------------------------------------------------------*/
+
+	/**
+	 * 
+	 */
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 		String principal = (String) authentication.getPrincipal();
