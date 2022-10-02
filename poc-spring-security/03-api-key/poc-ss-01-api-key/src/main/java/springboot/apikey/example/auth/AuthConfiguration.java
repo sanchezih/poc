@@ -18,7 +18,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Value("${app.http.auth-token-header-name}")
 	private String principalRequestHeader;
-	
+
 	@Autowired
 	private DataSource dataSource;
 
@@ -27,7 +27,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 
 		ApiKeyAuthFilter filter = new ApiKeyAuthFilter(principalRequestHeader);
 		filter.setAuthenticationManager(new ApiKeyAuthManager(dataSource));
-		
+
 		http.antMatcher("/api/v1/secure").csrf().disable().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().addFilter(filter).authorizeRequests()
 				.anyRequest().authenticated();
