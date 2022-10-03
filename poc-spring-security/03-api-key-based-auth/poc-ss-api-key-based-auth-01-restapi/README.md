@@ -39,23 +39,22 @@ Follow the steps below to run the example:
 
 3. Run the following command to start the example application:
 
-    $ mvn spring-boot:run
-        
+       $ mvn spring-boot:run
+
 4. Run the following command to send a request to the non-secure endpoint:
 
-    $ curl -v http://localhost:8080/api/v1/nonsecure
-        
+       $ curl -v http://localhost:8080/api/v1/nonsecure
+
     If successful, you will receive an `HTTP 200 OK` response.
     
 5. Run the following command to send a request to the secure endpoint:
 
-    $ curl -v http://localhost:8080/api/v1/secure
+       $ curl -v http://localhost:8080/api/v1/secure
         
     You will receive an `HTTP 403 Forbidden` response because you have not supplied a valid API key.
     
 6. Run the following command to send a request to the secure endpoint with an API key:
 
-    $ curl -v --header "api-key: aec093c2c98144f99a4a365ad1d2f05e" http://localhost:8080/api/v1/secure
+       $ curl -v --header "api-key: aec093c2c98144f99a4a365ad1d2f05e" http://localhost:8080/api/v1/secure
         
     If successful, you will now receive an `HTTP 200 OK` response because you have supplied a valid API key.
-
