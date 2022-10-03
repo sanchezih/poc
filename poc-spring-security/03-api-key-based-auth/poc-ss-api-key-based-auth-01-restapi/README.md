@@ -35,11 +35,11 @@ Password: Mysecretpassword1234!
 ## Running the Example
 Follow the steps below to run the example:
 
-1. Ensure you have a running PostgreSQL instance at `localhost:5432`.
+1. Ensure you have a running PostgreSQL instance at `<DATABASE_IP>:5432`.
 
 3. Run the following command to start the example application:
 
-    $ ./gradlew bootRun
+    $ mvn spring-boot:run
         
 4. Run the following command to send a request to the non-secure endpoint:
 
