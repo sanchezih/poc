@@ -1,5 +1,4 @@
-# springboot-apikey-example
-![Build](https://github.com/gregwhitaker/springboot-apikey-example/workflows/Build/badge.svg)
+# poc-ss-api-key-based-auth-01-restapi
 
 An example of authenticating with a Spring Boot application using an API key.
 
@@ -56,7 +55,7 @@ Follow the steps below to run the example:
     
 6. Run the following command to send a request to the secure endpoint with an API key:
 
-    $ curl -v --header "API_KEY: aec093c2c98144f99a4a365ad1d2f05e" http://localhost:8080/api/v1/secure
+    $ curl -v --header "api-key: aec093c2c98144f99a4a365ad1d2f05e" http://localhost:8080/api/v1/secure
         
     If successful, you will now receive an `HTTP 200 OK` response because you have supplied a valid API key.
 

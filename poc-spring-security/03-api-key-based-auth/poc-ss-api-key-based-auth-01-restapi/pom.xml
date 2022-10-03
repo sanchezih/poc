@@ -10,10 +10,10 @@
 	</parent>
 
 	<groupId>com.github.sanchezih</groupId>
-	<artifactId>poc-ss-01-api-key</artifactId>
+	<artifactId>poc-ss-api-key-based-auth-01-restapi</artifactId>
 	<version>1.0.0</version>
-	<name>poc-ss-01-api-key</name>
-	<description>poc-ss-01-api-key</description>
+	<name>poc-ss-api-key-based-auth-01-restapi</name>
+	<description>poc-ss-api-key-based-auth-01-restapi</description>
 
 	<properties>
 		<java.version>11</java.version>
