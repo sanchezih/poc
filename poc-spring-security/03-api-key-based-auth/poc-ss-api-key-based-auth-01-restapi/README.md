@@ -9,8 +9,6 @@ You can run Postgres this way (map a port):
 
     $ docker run --name motor-postgres-poc -e POSTGRES_PASSWORD=Mysecretpassword1234! -d -p 5432:5432 postgres:14
 
-So now you have mapped the port 5432 of your container to port 5432 of your server. -p <host_port>:<container_port>. So now your postgres is accessible from your public-server-ip:5432
-
 To test: Run the postgres database (command above)
 
     $ docker ps
@@ -19,11 +17,14 @@ To test: Run the postgres database (command above)
     6dc74930df1c   postgres   "docker-entrypoint.s…"   4 minutes ago   Up 4 minutes   5432/tcp, 0.0.0.0:5432->54320/tcp, :::5432->54320/tcp   motor-postgres-poc
 
 Go inside your container and create a database:
-
+  
     $ docker exec -it <CONTAINER_ID> bash
-    $ root@<CONTAINER_ID>:/# psql -U postgres
-    $ postgres-# CREATE DATABASE pocssapikey;
-    $ postgres-# \q
+    root@<CONTAINER_ID>:/# psql -U postgres
+    postgres=# CREATE DATABASE pocssapikey;
+    CREATE DATABASE
+    postgres=# \q
+    root@<CONTAINER_ID>:/# exit
+    exit
 
 Go to your localhost (where you have some tool or the psql client).
 Host: <DATABASE_HOST>
