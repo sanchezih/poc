@@ -47,9 +47,11 @@ public class Main {
 			// Productor de mensajes
 			MessageProducer producer = session.createProducer(topic);
 
-			for (int i = 1; i <= 50; i++) {
+			for (int i = 1; i <= 5; i++) {
 				Date d = new Date();
-				TextMessage message = session.createTextMessage("Un mensaje creado el dia " + d.toString());
+				String msgText = "Un mensaje creado el " + d.toString();
+				System.out.println("Se crea y se envia el mensaje: [" + msgText + "]");
+				TextMessage message = session.createTextMessage(msgText);
 				producer.send(topic, message);
 				TimeUnit.SECONDS.sleep(3);
 			}
