@@ -21,9 +21,12 @@ public class MessageSender {
 	private static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;
 	private static final String DESTINATION_QUEUE = "APLICATIONPRUEBA.QUEUE";
 	private static final boolean TRANSACTED_SESSION = true;
-	private static final int MESSAGES_TO_SEND = 20;
 
-	public void sendMessages() throws JMSException {
+	/**
+	 * 
+	 * @throws JMSException
+	 */
+	public void sendMessages(int messagesQty) throws JMSException {
 
 		/*
 		 * ActiveMQConnectionFactory se utiliza para crear una conexion con el
@@ -33,55 +36,61 @@ public class MessageSender {
 		 */
 		final ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(USER, PASSWORD, URL);
 
-		/*
-		 * Mediante una Connection se crean una o mas sesiones en las que se producen y
-		 * se consumen mensajes.
-		 */
+		// Mediante una Connection se crean una o mas sesiones en las que se producen y
+		// se consumen mensajes.
 		Connection connection = connectionFactory.createConnection();
 
-		/*
-		 * Llamada a start() para permitir el envio de mensajes
-		 */
+		// Llamada a start() para permitir el envio de mensajes
 		connection.start();
 
-		/*
-		 * Se crea una sesion transaccional
-		 */
+		// Se crea una sesion transaccional
 		final Session session = connection.createSession(TRANSACTED_SESSION, Session.AUTO_ACKNOWLEDGE);
 
 		final Destination destination = session.createQueue(DESTINATION_QUEUE);
 
-		/*
-		 * Se crea el productor a partir de una cola
-		 */
+		// Se crea el productor a partir de una cola
 		final MessageProducer producer = session.createProducer(destination);
 		producer.setDeliveryMode(DeliveryMode.PERSISTENT);
-		sendMessages(session, producer);
+		sendMessages(session, producer, messagesQty);
 		session.commit();
 
-		/*
-		 * Al finalizar se cierra toda conexion
-		 * 
-		 */
+		// Al finalizar se cierra toda conexion
 		session.close();
 		connection.close();
 
-		System.out.println("Mensajes enviados correctamente");
+		System.out.println(messagesQty + " mensajes enviados correctamente");
 	}
 
-	private void sendMessages(Session session, MessageProducer producer) throws JMSException {
+	/**
+	 * 
+	 * @param session
+	 * @param producer
+	 * @throws JMSException
+	 */
+	private void sendMessages(Session session, MessageProducer producer, int messagesQty) throws JMSException {
 		final MessageSender messageSender = new MessageSender();
-		for (int i = 1; i <= MESSAGES_TO_SEND; i++) {
+		for (int i = 1; i <= messagesQty; i++) {
 			final UserAction userActionToSend = getRandomUserAction();
 			messageSender.sendMessage(userActionToSend.getActionAsString(), session, producer);
 		}
 	}
 
+	/**
+	 * 
+	 * @param message
+	 * @param session
+	 * @param producer
+	 * @throws JMSException
+	 */
 	private void sendMessage(String message, Session session, MessageProducer producer) throws JMSException {
 		final TextMessage textMessage = session.createTextMessage(message);
 		producer.send(textMessage);
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	private static UserAction getRandomUserAction() {
 		final int userActionNumber = (int) (RANDOM.nextFloat() * UserAction.values().length);
 		return UserAction.values()[userActionNumber];

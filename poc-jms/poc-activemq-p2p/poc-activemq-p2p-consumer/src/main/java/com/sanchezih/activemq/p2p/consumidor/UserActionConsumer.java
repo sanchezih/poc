@@ -2,6 +2,7 @@ package com.sanchezih.activemq.p2p.consumidor;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import javax.jms.Connection;
 import javax.jms.Destination;
@@ -29,6 +30,10 @@ public class UserActionConsumer {
 		this.consumedMessageTypes = new HashMap<String, Integer>();
 	}
 
+	/**
+	 * 
+	 * @throws JMSException
+	 */
 	public void processMessages() throws JMSException {
 
 		final ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(USER, PASSWORD, URL);
@@ -54,6 +59,11 @@ public class UserActionConsumer {
 		showProcessedResults();
 	}
 
+	/**
+	 * 
+	 * @param consumer
+	 * @throws JMSException
+	 */
 	private void processAllMessagesInQueue(MessageConsumer consumer) throws JMSException {
 		Message message;
 		while ((message = consumer.receive(TIMEOUT)) != null) {
@@ -61,6 +71,11 @@ public class UserActionConsumer {
 		}
 	}
 
+	/**
+	 * 
+	 * @param message
+	 * @throws JMSException
+	 */
 	private void proccessMessage(Message message) throws JMSException {
 		if (message instanceof TextMessage) {
 			final TextMessage textMessage = (TextMessage) message;
@@ -70,6 +85,10 @@ public class UserActionConsumer {
 		}
 	}
 
+	/**
+	 * 
+	 * @param message
+	 */
 	private void incrementMessageType(String message) {
 		if (consumedMessageTypes.get(message) == null) {
 			consumedMessageTypes.put(message, 1);
@@ -79,8 +98,11 @@ public class UserActionConsumer {
 		}
 	}
 
+	/**
+	 * 
+	 */
 	private void showProcessedResults() {
-		System.out.println("Procesados un total de " + totalConsumedMessages + " mensajes");
+		System.out.println("Se procesaron " + totalConsumedMessages + " mensajes");
 		for (String messageType : consumedMessageTypes.keySet()) {
 			final int numberOfTypeMessages = consumedMessageTypes.get(messageType);
 			System.out.println("Tipo " + messageType + " Procesados " + numberOfTypeMessages + " ("

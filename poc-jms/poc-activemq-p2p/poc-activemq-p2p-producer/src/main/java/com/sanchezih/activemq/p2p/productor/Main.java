@@ -3,8 +3,6 @@ package com.sanchezih.activemq.p2p.productor;
 import javax.jms.JMSException;
 
 /**
- * Ejemplo tomado de https://www.adictosaltrabajo.com/2012/07/25/active-mq/
- * 
  * El emisor de mensajes envia 20 mensajes a nuestro intermediario con la
  * informacion de las acciones que realizan los usuarios.
  * 
@@ -17,8 +15,10 @@ import javax.jms.JMSException;
  */
 public class Main {
 
+	private static final int MESSAGES_TO_SEND = 20;
+
 	public static void main(String[] args) throws JMSException {
 		final MessageSender messageSender = new MessageSender();
-		messageSender.sendMessages();
+		messageSender.sendMessages(MESSAGES_TO_SEND);
 	}
 }
