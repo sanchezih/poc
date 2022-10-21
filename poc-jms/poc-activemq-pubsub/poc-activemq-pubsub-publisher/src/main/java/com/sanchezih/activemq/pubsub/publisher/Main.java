@@ -1,4 +1,7 @@
-package com.sanchezih.activemq.pubsub.topic_publisher;
+package com.sanchezih.activemq.pubsub.publisher;
+
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
@@ -44,15 +47,18 @@ public class Main {
 			// Productor de mensajes
 			MessageProducer producer = session.createProducer(myTestTopic);
 
-			for (int i = 1; i <= 3; i++) {
-				TextMessage message = session.createTextMessage("Enviar un mensaje " + i);
+			for (int i = 1; i <= 50; i++) {
+				Date d = new Date();
+				TextMessage message = session.createTextMessage("Un mensaje creado " + d.toString());
 				producer.send(myTestTopic, message);
+				System.out.println("Se creo el mensaje "+message.getText());
+				TimeUnit.SECONDS.sleep(3);
 			}
 
 			// Cerrar recursos
 			session.close();
 			connection.close();
-		} catch (JMSException e) {
+		} catch (JMSException | InterruptedException e) {
 			e.printStackTrace();
 		}
 	}

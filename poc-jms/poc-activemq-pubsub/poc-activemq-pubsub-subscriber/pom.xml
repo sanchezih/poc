@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.sanchezih</groupId>
-	<artifactId>poc-activemq-pubsub</artifactId>
+	<artifactId>poc-activemq-pubsub-subscriber</artifactId>
 	<version>1.0.0</version>
 	<properties>
 		<maven.compiler.target>11</maven.compiler.target>
