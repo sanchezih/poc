@@ -1,13 +1,13 @@
 # poc-activemq-pubsub-subscriber
 
-An example of authenticating with a Spring Boot application using an API key.
+Ejemplo de suscripcion a topico.
 
 ## Compilacion y ejecucion
-Compilar
+Compilacion
 
     $ mvn clean compile assembly:single
 
-Compilar
+Ejecucion
 
     $ java -jar target/poc-activemq-pubsub-publisher-1.0.0-jar-with-dependencies.jar
 
