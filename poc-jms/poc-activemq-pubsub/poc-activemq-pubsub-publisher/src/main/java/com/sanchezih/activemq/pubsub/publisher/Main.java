@@ -42,22 +42,22 @@ public class Main {
 			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
 			// Crear tema, utilizado como mensaje de suscripcion al consumidor
-			Topic myTestTopic = session.createTopic("activemq-topic-test1");
+			Topic topic = session.createTopic("activemq-topic-test1");
 
 			// Productor de mensajes
-			MessageProducer producer = session.createProducer(myTestTopic);
+			MessageProducer producer = session.createProducer(topic);
 
 			for (int i = 1; i <= 50; i++) {
 				Date d = new Date();
-				TextMessage message = session.createTextMessage("Un mensaje creado " + d.toString());
-				producer.send(myTestTopic, message);
-				System.out.println("Se creo el mensaje "+message.getText());
+				TextMessage message = session.createTextMessage("Un mensaje creado el dia " + d.toString());
+				producer.send(topic, message);
 				TimeUnit.SECONDS.sleep(3);
 			}
 
 			// Cerrar recursos
 			session.close();
 			connection.close();
+
 		} catch (JMSException | InterruptedException e) {
 			e.printStackTrace();
 		}

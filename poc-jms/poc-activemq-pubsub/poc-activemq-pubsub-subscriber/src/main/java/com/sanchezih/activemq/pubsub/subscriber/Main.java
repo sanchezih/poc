@@ -1,7 +1,10 @@
 package com.sanchezih.activemq.pubsub.subscriber;
 
+import java.util.concurrent.TimeUnit;
+
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
+import javax.jms.JMSException;
 import javax.jms.MessageConsumer;
 import javax.jms.Session;
 import javax.jms.Topic;
@@ -22,56 +25,42 @@ public class Main {
 
 	public static void main(String[] args) {
 
+		// Crear conexion
+		Connection connection;
+
 		// Crea una fabrica de conexiones
 		ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(USERNAME, PASSWORD, BROKER_URL);
 
 		try {
+			connection = connectionFactory.createConnection();
 
-			// Crear conexion
-			Connection connection = connectionFactory.createConnection();
-
-			// Crea una sesión sin transaccion
+			// Crea una sesion sin transaccion
 			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
 			// Crear tema
 			Topic topic = session.createTopic("activemq-topic-test1");
 
-			// Consumer1 subscribes to customerTopic
+			// Consumidor 01 se suscribe al topico activemq-topic-test1
 			MessageConsumer consumer1 = session.createConsumer(topic);
-			consumer1.setMessageListener(new ConsumerMessageListener("Consumer1"));
+			consumer1.setMessageListener(new ConsumerMessageListener("Consumidor 01"));
 
-			// Consumer2 subscribes to customerTopic
+			// Consumidor 02 se suscribe al topico activemq-topic-test1
 			MessageConsumer consumer2 = session.createConsumer(topic);
-			consumer2.setMessageListener(new ConsumerMessageListener("Consumer2"));
+			consumer2.setMessageListener(new ConsumerMessageListener("Consumidor 02"));
 
 			// Abre la conexion
 			connection.start();
 
-			/**
-			 * Deje que el hilo principal duerma durante 1000 segundos, para que el objeto
-			 * consumidor de mensajes pueda continuar activo durante un período de tiempo
-			 * para que el mensaje pueda ser monitoreado
-			 */
-			Thread.sleep(1000 * 1000);
+			// Freno el hilo 2 minutos
+			TimeUnit.SECONDS.sleep(120);
 
 			// Cerrar recursos
 			session.close();
 			connection.close();
-		} catch (Exception e) {
+
+		} catch (JMSException | InterruptedException e) {
 			e.printStackTrace();
 		}
-	}
-
-	public static int getRandomTime() {
-		int min = 1;
-		int max = 10;
-
-		// Generate random int value from 50 to 100
-		System.out.println("Random value in int from " + min + " to " + max + ":");
-		int random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-		System.out.println(random_int);
-
-		return random_int;
 	}
 
 }
