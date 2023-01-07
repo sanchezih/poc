@@ -13,23 +13,19 @@ import com.bezkoder.springjwt.models.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class UserDetailsImpl implements UserDetails {
-
 	private static final long serialVersionUID = 1L;
+
 	private Long id;
+
 	private String username;
+
 	private String email;
+
 	@JsonIgnore
 	private String password;
+
 	private Collection<? extends GrantedAuthority> authorities;
 
-	/**
-	 * 
-	 * @param id
-	 * @param username
-	 * @param email
-	 * @param password
-	 * @param authorities
-	 */
 	public UserDetailsImpl(Long id, String username, String email, String password,
 			Collection<? extends GrantedAuthority> authorities) {
 		this.id = id;
@@ -39,14 +35,10 @@ public class UserDetailsImpl implements UserDetails {
 		this.authorities = authorities;
 	}
 
-	/**
-	 * 
-	 * @param user
-	 * @return
-	 */
 	public static UserDetailsImpl build(User user) {
 		List<GrantedAuthority> authorities = user.getRoles().stream()
 				.map(role -> new SimpleGrantedAuthority(role.getName().name())).collect(Collectors.toList());
+
 		return new UserDetailsImpl(user.getId(), user.getUsername(), user.getEmail(), user.getPassword(), authorities);
 	}
 

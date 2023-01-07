@@ -38,11 +38,11 @@ import com.bezkoder.springjwt.security.services.UserDetailsImpl;
  * @author ihsanch
  *
  */
+
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
-
 	@Autowired
 	AuthenticationManager authenticationManager;
 
@@ -58,11 +58,6 @@ public class AuthController {
 	@Autowired
 	JwtUtils jwtUtils;
 
-	/**
-	 * 
-	 * @param loginRequest
-	 * @return
-	 */
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
@@ -80,11 +75,6 @@ public class AuthController {
 				new JwtResponse(jwt, userDetails.getId(), userDetails.getUsername(), userDetails.getEmail(), roles));
 	}
 
-	/**
-	 * 
-	 * @param signUpRequest
-	 * @return
-	 */
 	@PostMapping("/signup")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
 		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
