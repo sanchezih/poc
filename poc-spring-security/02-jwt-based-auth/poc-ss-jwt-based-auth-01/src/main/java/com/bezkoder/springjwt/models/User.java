@@ -2,7 +2,6 @@ package com.bezkoder.springjwt.models;
 
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,6 +20,7 @@ import javax.validation.constraints.Size;
 @Table(name = "users", uniqueConstraints = { @UniqueConstraint(columnNames = "username"),
 		@UniqueConstraint(columnNames = "email") })
 public class User {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -42,6 +42,8 @@ public class User {
 	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
 
+	/*----------------------------------------------------------------------------*/
+
 	public User() {
 	}
 
@@ -50,6 +52,8 @@ public class User {
 		this.email = email;
 		this.password = password;
 	}
+
+	/*----------------------------------------------------------------------------*/
 
 	public Long getId() {
 		return id;
