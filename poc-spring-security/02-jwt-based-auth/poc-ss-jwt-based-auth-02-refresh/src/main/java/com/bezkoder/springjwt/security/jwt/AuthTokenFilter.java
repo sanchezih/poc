@@ -27,20 +27,14 @@ import com.bezkoder.springjwt.security.services.UserDetailsServiceImpl;
  *
  */
 public class AuthTokenFilter extends OncePerRequestFilter {
-
-	private static final Logger logger = LoggerFactory.getLogger(AuthTokenFilter.class);
-
 	@Autowired
 	private JwtUtils jwtUtils;
 
 	@Autowired
 	private UserDetailsServiceImpl userDetailsService;
 
-	/**
-	 * Metodo que analiza y valida el JWT, cargando los detalles del usuario (usando
-	 * UserDetailsService) y verificando la autorizacion (usando
-	 * UsernamePasswordAuthenticationToken).
-	 */
+	private static final Logger logger = LoggerFactory.getLogger(AuthTokenFilter.class);
+
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
@@ -63,11 +57,6 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 		filterChain.doFilter(request, response);
 	}
 
-	/**
-	 * 
-	 * @param request
-	 * @return
-	 */
 	private String parseJwt(HttpServletRequest request) {
 		String headerAuth = request.getHeader("Authorization");
 

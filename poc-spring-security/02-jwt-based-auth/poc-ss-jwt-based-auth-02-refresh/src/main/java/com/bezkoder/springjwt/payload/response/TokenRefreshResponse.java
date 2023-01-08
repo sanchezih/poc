@@ -1,7 +1,6 @@
 package com.bezkoder.springjwt.payload.response;
 
 public class TokenRefreshResponse {
-	
 	private String accessToken;
 	private String refreshToken;
 	private String tokenType = "Bearer";

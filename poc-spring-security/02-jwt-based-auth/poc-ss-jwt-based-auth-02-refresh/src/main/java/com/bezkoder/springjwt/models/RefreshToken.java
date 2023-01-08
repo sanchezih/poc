@@ -6,7 +6,6 @@ import javax.persistence.*;
 
 @Entity(name = "refreshtoken")
 public class RefreshToken {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;

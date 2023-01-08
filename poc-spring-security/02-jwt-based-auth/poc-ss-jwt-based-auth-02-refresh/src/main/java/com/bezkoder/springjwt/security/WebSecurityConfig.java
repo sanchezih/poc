@@ -23,9 +23,8 @@ import com.bezkoder.springjwt.security.services.UserDetailsServiceImpl;
 @EnableGlobalMethodSecurity(
 		// securedEnabled = true,
 		// jsr250Enabled = true,
-		prePostEnabled = true)
+		prePostEnabled = true) // Desbloqueara las anotaciones @PreAuthorize y @PostAuthorize
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	
 	@Autowired
 	UserDetailsServiceImpl userDetailsService;
 

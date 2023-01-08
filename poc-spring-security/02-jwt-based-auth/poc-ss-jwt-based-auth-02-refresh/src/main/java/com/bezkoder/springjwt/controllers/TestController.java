@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author ihsanch
  *
  */
+
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/test")
