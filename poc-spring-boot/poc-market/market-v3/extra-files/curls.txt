@@ -1,9 +1,0 @@
-curl --location --request POST 'http://localhost:8080/product' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "name": "Manzana",
-    "cost": 12.5,
-    "typeId": 1
-}'
-
-curl --location --request GET 'http://localhost:8080/product/1'

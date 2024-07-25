@@ -1,3 +1,0 @@
-# poc-market
-
-Repositorio market.
